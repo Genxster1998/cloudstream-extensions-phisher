@@ -373,7 +373,7 @@ class HDhub4uProvider : MainAPI() {
                 if (isDirectLinkBlock) {
                     baseLinks.forEach { url ->
                         try {
-                            val resolvedUrl = getRedirectLinks(url.trim())
+                            val resolvedUrl = getRedirectLinks(url.trim()) ?: url
                             val episodeDoc = app.get(resolvedUrl).document
 
                             episodeDoc.select("h5 a").forEach { linkElement ->
@@ -453,7 +453,7 @@ class HDhub4uProvider : MainAPI() {
         linksList.amap { link ->
             try {
                 val finalLink = if ("?id=" in link) {
-                    getRedirectLinks(link)
+                    getRedirectLinks(link) ?: link
                 } else {
                     link
                 }

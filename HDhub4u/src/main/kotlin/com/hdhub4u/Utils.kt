@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 
-suspend fun getRedirectLinks(url: String): String {
+suspend fun getRedirectLinks(url: String): String? {
     val doc = app.get(url).toString()
     val regex = "s\\('o','([A-Za-z0-9+/=]+)'|ck\\('_wp_http_\\d+','([^']+)'".toRegex()
     val combinedString = buildString {
@@ -40,7 +40,7 @@ suspend fun getRedirectLinks(url: String): String {
         encodedurl.ifEmpty { directlink }
     } catch (e: Exception) {
         Log.e("Error:", "Error processing links $e")
-        "" // Return an empty string on failure
+        url // Return url
     }
 }
 
