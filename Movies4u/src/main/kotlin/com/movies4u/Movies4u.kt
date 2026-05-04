@@ -53,8 +53,8 @@ class Movies4u : MainAPI() {
 
     override val mainPage = mainPageOf(
         "" to "Home",
-        "category/bollywood/" to "BollyWood",
-        "category/hollywood/" to "HollyWood",
+        "category/bollywood-movies/" to "BollyWood",
+        "category/hollywood-movies/" to "HollyWood",
         "category/web-series/" to "WEB-Series",
         "category/anime/" to "Anime / Animation",
         "category/k-drama/" to "K-Drama",
@@ -78,7 +78,7 @@ class Movies4u : MainAPI() {
 
 
     private fun Element.toSearchResult(): SearchResponse? {
-        val aTag = selectFirst("h3 a") ?: return null
+        val aTag = selectFirst("h3 a,h2 a") ?: return null
         val img = selectFirst("img") ?: return null
 
         val href = fixUrl(aTag.attr("href"))

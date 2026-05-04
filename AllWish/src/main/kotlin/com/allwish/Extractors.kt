@@ -1,6 +1,5 @@
 package com.allwish
 
-import android.annotation.SuppressLint
 import com.google.gson.Gson
 import com.lagradost.api.Log
 import com.lagradost.cloudstream3.SubtitleFile
@@ -27,7 +26,6 @@ open class MegaPlay : ExtractorApi() {
         override val mainUrl = "https://megaplay.buzz"
         override val requiresReferer = false
 
-        @SuppressLint("NewApi")
         override suspend fun getUrl(
             url: String,
             referer: String?,
@@ -38,9 +36,8 @@ open class MegaPlay : ExtractorApi() {
                 "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0",
                 "Accept" to "*/*",
                 "Accept-Language" to "en-US,en;q=0.5",
-                "Accept-Encoding" to "gzip, deflate, br, zstd",
-                "Origin" to "https://vidwish.live",
-                "Referer" to "https://vidwish.live/",
+                "Origin" to mainUrl,
+                "Referer" to "$mainUrl/",
                 "Connection" to "keep-alive",
                 "Pragma" to "no-cache",
                 "Cache-Control" to "no-cache"
