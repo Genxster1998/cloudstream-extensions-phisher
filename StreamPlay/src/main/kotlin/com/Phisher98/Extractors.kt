@@ -1042,6 +1042,10 @@ open class HubCloud : ExtractorApi() {
 
         document.select("a.btn").forEach { element ->
             val link = element.attr("href")
+
+            val blocked = listOf("tinyurl", "telegram", "hubcloud.foo/tg")
+            if (blocked.any { it in link }) return@forEach
+
             val text = element.ownText()
             val label = text.lowercase()
             when {
@@ -1136,33 +1140,6 @@ open class HubCloud : ExtractorApi() {
                             link
                         ) { this.quality = quality }
                     )
-                }
-
-                /*
-                "10gbps" in label -> {
-                    var current = link
-
-                    repeat(3) {
-                        val resp = app.get(current, allowRedirects = false)
-                        val loc = resp.headers["location"] ?: return@repeat
-
-                        if ("link=" in loc) {
-                            callback(
-                                newExtractorLink(
-                                    "10Gbps [Download]",
-                                    "10Gbps [Download] $labelExtras",
-                                    loc.substringAfter("link=")
-                                ) { this.quality = quality }
-                            )
-                        }
-                        current = loc
-                    }
-
-                    Log.e(tag, "10Gbps: Redirect limit reached")
-                }
-                */
-                else -> {
-                    loadExtractor(link, "", subtitleCallback, callback)
                 }
             }
         }
@@ -2625,7 +2602,7 @@ class Vidora : ExtractorApi() {
                 referer = pageResponse.url
             )
         }
-        val headers= mapOf("origin" to mainUrl)
+        val headers= mapOf("origin" to mainUrl, "referer" to mainUrl)
         val scriptData = if (!getPacked(pageResponse.text).isNullOrEmpty()) {
             getAndUnpack(pageResponse.text)
         } else {

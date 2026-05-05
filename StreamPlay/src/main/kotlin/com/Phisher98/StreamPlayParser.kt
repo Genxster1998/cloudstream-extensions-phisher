@@ -258,8 +258,8 @@ data class MALSyncSites(
     @JsonProperty("9anime") val nineAnime: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
     @JsonProperty("animepahe") val animepahe: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
     @JsonProperty("KickAssAnime") val KickAssAnime: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
+    @JsonProperty("AnimeKAI") val AnimeKAI: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
 )
-
 data class MALSyncResponses(
     @JsonProperty("Sites") val sites: MALSyncSites? = null,
 )
@@ -618,28 +618,14 @@ data class DomainsParser(
     val movienestbd: String,
     val movies4u: String,
     val cinevood: String,
+    val dudefilms: String,
+    val fibwatch: String,
+    val fibtoon: String,
+    val fibdrama: String,
+    val xprimehub: String,
+    val m4ufree: String,
 )
 
-data class DriveLink(
-    val fileId: String,
-    val webViewLink: String,
-    val driveLabel: String,
-    val credentialIndex: Int,
-    val isLoginDrive: Boolean,
-    val isDrive2: Boolean
-)
-
-data class Metadata(
-    val mimeType: String,
-    val fileExtension: String,
-    val modifiedTime: String,
-    val createdTime: String,
-    val pixeldrainConversionFailed: Boolean,
-    val pixeldrainConversionFailedAt: String,
-    val pixeldrainConversionError: String,
-    val vikingConversionFailed: Boolean,
-    val vikingConversionFailedAt: String
-)
 
 // CinemetaRes
 
@@ -801,18 +787,16 @@ data class VidFastResult(
     val token: String,
 )
 
+
 data class VidFastServers(
-    val status: Long,
     val result: List<VidFastServersResult>,
-    val info: String,
 )
 
 data class VidFastServersResult(
     val name: String,
-    val description: String,
-    val image: String,
     val data: String,
 )
+
 data class VidFastServersStreamRoot(
     val status: Long,
     val result: VidFastServersStreamResult,

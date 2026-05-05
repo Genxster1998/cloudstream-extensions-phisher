@@ -1,7 +1,6 @@
 package com.phisher98
 
 import android.content.SharedPreferences
-import androidx.annotation.RequiresApi
 import androidx.core.content.edit
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.lagradost.api.Log
@@ -180,21 +179,14 @@ open class StreamPlay(val sharedPref: SharedPreferences? = null) : TmdbProvider(
             "https://animekai.fi",
             "https://animekai.fo",
             "https://animekai.gs",
-            "https://animekai.la",
             "https://anikai.to"
         )
-        const val MultiEmbedAPI = "https://multiembed.mov"
         const val kissKhAPI = "https://kisskh.nl"
-        const val PlaydesiAPI = "https://playdesi.info"
         const val watchSomuchAPI = "https://watchsomuch.tv" // sub only
         const val nineTvAPI = "https://moviesapi.club"
         const val zshowAPI = BuildConfig.ZSHOW_API
-        const val ridomoviesAPI = "https://ridomovies.tv"
         const val allmovielandAPI = "https://allmovieland.io"
-        const val vidsrctoAPI = "https://vidsrc.cc"
         const val animetoshoAPI = "https://animetosho.org"
-        const val moflixAPI = "https://moflix-stream.xyz"
-        const val zoechipAPI = "https://zoechip.gg"
         const val nepuAPI = "https://nepu.to"
         const val dahmerMoviesAPI = "https://a.111477.xyz"
         const val animepaheAPI = "https://animepahe.org"
@@ -209,23 +201,16 @@ open class StreamPlay(val sharedPref: SharedPreferences? = null) : TmdbProvider(
         const val Watch32 = "https://watch32.sx"
         const val movieBox= "https://api.inmoviebox.com"
         const val vidrock = "https://vidrock.net"
-        const val soapy = "https://soapy.to"
         const val vidlink = "https://vidlink.pro"
-        const val cinemaOSApi = "https://cinemaos.tech"
-        const val mp4hydra = "https://mp4hydra.org"
         const val vidfastProApi = "https://vidfast.pro"
         const val videasyAPI = "https://api.videasy.net"
         const val yFlix = "https://yflix.to"
         const val moviesClubApi = "https://moviesapi.club"
         const val cinemacity = "https://cinemacity.cc"
-        const val embedmaster = "https://embedmaster.link"
         const val hexaSU = "https://theemoviedb.hexa.su"
         const val sudatchi = "https://sudatchi.com"
-        const val m4uhdAPI = "https://ww3.m4ufree.lat"
         const val mappleAPI = "https://mapple.uk"
         const val twoEmbedAPI = "https://www.2embed.cc"
-        const val kuudere = "https://kuudere.to"
-        const val levidia = "https://www.levidia.ch"
         const val xpassAPI = "https://play.xpass.top"
         const val vaplayer = "https://streamdata.vaplayer.ru"
         fun getType(t: String?): TvType {

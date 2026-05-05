@@ -43,7 +43,6 @@ import com.lagradost.cloudstream3.utils.ExtractorLink
 import com.lagradost.nicehttp.RequestBodyTypes
 import com.phisher98.StreamPlay.Companion.anilistAPI
 import com.phisher98.StreamPlay.Companion.malsyncAPI
-import com.phisher98.StreamPlayExtractor.invokeAniXL
 import com.phisher98.StreamPlayExtractor.invokeAnichi
 import com.phisher98.StreamPlayExtractor.invokeAnimeKai
 import com.phisher98.StreamPlayExtractor.invokeAnimepahe
@@ -52,7 +51,6 @@ import com.phisher98.StreamPlayExtractor.invokeAnizone
 import com.phisher98.StreamPlayExtractor.invokeHianime
 import com.phisher98.StreamPlayExtractor.invokeKickAssAnime
 import com.phisher98.StreamPlayExtractor.invokeSudatchi
-import com.phisher98.StreamPlayExtractor.invokekuudere
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.util.Calendar
@@ -319,8 +317,8 @@ class StreamPlayAnime : MainAPI() {
         val year=mediaData.year
         val malsync = app.get("$malsyncAPI/mal/anime/$malId").parsedSafe<MALSyncResponses>()?.sites
         val zoro = malsync?.zoro
+        val animekaiid = malsync?.AnimeKAI?.values?.firstNotNullOfOrNull { it["identifier"] }
         val zorotitle = zoro?.values?.firstNotNullOfOrNull { it["title"] }?.replace(":", " ")
-        val aniXL = malsync?.AniXL?.values?.firstNotNullOfOrNull { it["url"] }
         val kaasSlug = malsync?.KickAssAnime?.values?.firstNotNullOfOrNull { it["identifier"] }
 
         val dubStatus: String? =
@@ -339,7 +337,7 @@ class StreamPlayAnime : MainAPI() {
             { invokeAnizone(jpTitle,zorotitle, episode, callback, dubStatus) },
             { invokeAnichi(jpTitle, anititle, year, episode, subtitleCallback, callback, dubStatus) },
             { invokeKickAssAnime(zorotitle,kaasSlug, episode, subtitleCallback, callback, dubStatus) },
-            { invokeAnimeKai(jpTitle, zorotitle, episode, subtitleCallback, callback, dubStatus) },
+            { invokeAnimeKai(animekaiid , episode, subtitleCallback, callback, dubStatus) },
             {
                 malId?.let {
                     invokeAnimetosho(
@@ -353,23 +351,8 @@ class StreamPlayAnime : MainAPI() {
                 }
             },
             {
-                if (aniXL != null) {
-                    invokeAniXL(aniXL, episode, callback, dubStatus)
-                }
-            },
-            {
                 invokeSudatchi(aniid, episode, subtitleCallback, callback)
-            },
-            {
-                invokekuudere(
-                    anititle ?: zorotitle,
-                    season,
-                    episode,
-                    subtitleCallback,
-                    callback,
-                    dubStatus
-                )
-            },
+            }
         )
         return true
     }

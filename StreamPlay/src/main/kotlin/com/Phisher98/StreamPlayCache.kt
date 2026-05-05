@@ -78,6 +78,7 @@ object StreamPlayCache {
         val malId: String? = null,
         val kitsuId: String? = null,
         val zoroId: String? = null,
+        val animekaiId: String? = null,
         val timestamp: Long = System.currentTimeMillis()
     )
 
@@ -149,14 +150,14 @@ object StreamPlayCache {
      * Get provider statistics
      */
     fun getProviderStats(providerId: String): ProviderStats {
-        return providerStatsMap.getOrDefault(providerId, ProviderStats())
+        return providerStatsMap[providerId] ?: ProviderStats()
     }
 
     /**
      * Record provider execution result
      */
     fun recordProviderExecution(providerId: String, success: Boolean, durationMs: Long) {
-        val current = providerStatsMap.getOrDefault(providerId, ProviderStats())
+        val current = providerStatsMap[providerId] ?: ProviderStats()
 
         val updated = if (success) {
             current.copy(
@@ -191,14 +192,6 @@ object StreamPlayCache {
 
         val timePenalty = if (stats.avgTimeMs > 0) stats.avgTimeMs / 1000f else 0f
         return (stats.successRate * 100f) - timePenalty
-    }
-
-    fun resetProviderCircuit(providerId: String) {
-        val current = providerStatsMap[providerId]
-        if (current != null && current.isCircuitBroken) {
-            providerStatsMap[providerId] = current.copy(consecutiveFailures = 0)
-            Log.d(TAG, "🔄 Circuit breaker reset: $providerId")
-        }
     }
 
     // ==================== Metadata Caching ====================
