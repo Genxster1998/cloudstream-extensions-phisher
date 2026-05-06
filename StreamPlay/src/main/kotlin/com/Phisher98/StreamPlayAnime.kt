@@ -50,6 +50,7 @@ import com.phisher98.StreamPlayExtractor.invokeAnimetosho
 import com.phisher98.StreamPlayExtractor.invokeAnizone
 import com.phisher98.StreamPlayExtractor.invokeHianime
 import com.phisher98.StreamPlayExtractor.invokeKickAssAnime
+import com.phisher98.StreamPlayExtractor.invokeReAnime
 import com.phisher98.StreamPlayExtractor.invokeSudatchi
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -352,6 +353,9 @@ class StreamPlayAnime : MainAPI() {
             },
             {
                 invokeSudatchi(aniid, episode, subtitleCallback, callback)
+            },
+            {
+                invokeReAnime(aniid, episode, subtitleCallback, callback, dubStatus)
             }
         )
         return true

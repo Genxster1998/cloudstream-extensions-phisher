@@ -181,6 +181,7 @@ open class StreamPlay(val sharedPref: SharedPreferences? = null) : TmdbProvider(
             "https://animekai.gs",
             "https://anikai.to"
         )
+        const val reanime = "https://reanime.to"
         const val kissKhAPI = "https://kisskh.nl"
         const val watchSomuchAPI = "https://watchsomuch.tv" // sub only
         const val nineTvAPI = "https://moviesapi.club"

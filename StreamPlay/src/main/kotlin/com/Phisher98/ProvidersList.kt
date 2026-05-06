@@ -32,6 +32,7 @@ import com.phisher98.StreamPlayExtractor.invokeMoviesmod
 import com.phisher98.StreamPlayExtractor.invokeMultimovies
 import com.phisher98.StreamPlayExtractor.invokeNepu
 import com.phisher98.StreamPlayExtractor.invokeNinetv
+import com.phisher98.StreamPlayExtractor.invokeReAnime
 import com.phisher98.StreamPlayExtractor.invokeRiveStream
 import com.phisher98.StreamPlayExtractor.invokeRogmovies
 import com.phisher98.StreamPlayExtractor.invokeSubtitleAPI
@@ -84,6 +85,7 @@ private suspend fun getAnimeIds(res: StreamPlay.LinkData): StreamPlayExtractor.A
     if (cached != null) {
         return StreamPlayExtractor.AnimeResolvedIds(
             malId = cached.malId?.toIntOrNull(),
+            anilistId = cached.anilistId?.toIntOrNull(),
             anidbEid = 0,
             zoroIds = cached.zoroId?.split(",")?.filter { it.isNotBlank() },
             zoroTitle = null,
@@ -121,11 +123,16 @@ private val providers by lazy {
                 ids.malId?.let { invokeHianime(it, res.episode, subtitleCallback, callback, getDubStatus(res)) }
             }
         },
-
         Provider("animetosho", "AnimeTosho") { res, subtitleCallback, callback, _, _ ->
             if (res.isAnime) {
                 val ids = getAnimeIds(res)
                 ids.malId?.let { invokeAnimetosho(it, res.episode, subtitleCallback, callback, getDubStatus(res), ids.anidbEid) }
+            }
+        },
+        Provider("ReAnime", "ReAnime") { res, subtitleCallback, callback, _, _ ->
+            if (res.isAnime) {
+                val ids = getAnimeIds(res)
+                ids.anilistId?.let { invokeReAnime(it, res.episode, subtitleCallback, callback, getDubStatus(res)) }
             }
         },
         Provider("animekai", "AnimeKai") { res, subtitleCallback, callback, _, _ ->

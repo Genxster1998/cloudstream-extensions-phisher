@@ -533,6 +533,7 @@ object StreamPlayExtractor : StreamPlay() {
     // Shared data class to hold pre-fetched anime metadata
     data class AnimeResolvedIds(
         val malId: Int?,
+        val anilistId: Int?,
         val anidbEid: Int,
         val zoroIds: List<String>? = null,
         val zoroTitle: String?,
@@ -550,7 +551,7 @@ object StreamPlayExtractor : StreamPlay() {
         season: Int?,
         episode: Int?,
     ): AnimeResolvedIds {
-        val (_, malId) = convertTmdbToAnimeId(
+        val (anilistId, malId) = convertTmdbToAnimeId(
             title, date, airedDate, if (season == null) TvType.AnimeMovie else TvType.Anime
         )
 
@@ -571,6 +572,7 @@ object StreamPlayExtractor : StreamPlay() {
 
         return AnimeResolvedIds(
             malId = malId,
+            anilistId = anilistId,
             anidbEid = anidbEid,
             zoroIds = malsync?.zoro?.keys?.toList()?.filterNotNull(),
             zoroTitle = malsync?.zoro?.values?.firstNotNullOfOrNull { it["title"] }
@@ -996,6 +998,37 @@ object StreamPlayExtractor : StreamPlay() {
                     "${it.meta.resolution}".toIntOrNull()
                 )
             }
+    }
+
+
+    suspend fun invokeReAnime(
+        anilistId: Int? = null,
+        episode: Int? = null,
+        subtitleCallback: (SubtitleFile) -> Unit,
+        callback: (ExtractorLink) -> Unit,
+        dubtype: String?,
+    ) {
+        val type = when (dubtype) {
+            "DUB" -> "dub"
+            else -> "sub"
+        }
+
+        val res = app.get("$reanime/api/flix/$anilistId/$episode")
+            .parsedSafe<ReAnime>()
+            ?.servers
+            ?.filter { it.dataType.equals(type, true) }
+            ?: return
+
+        res.forEach {
+            loadDisplaySourceNameExtractor(
+                "ReAnime ${it.serverName}",
+                "ReAnime ${it.serverName} [${it.dataType.capitalize()}]",
+                it.dataLink,
+                "$reanime/",
+                subtitleCallback,
+                callback
+            )
+        }
     }
 
 

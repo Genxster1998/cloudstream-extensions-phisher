@@ -1036,3 +1036,43 @@ data class VaplayerData(
     @param:JsonProperty("stream_urls")
     val streamUrls: List<String>,
 )
+
+//ReAnime
+
+data class ReAnime(
+    val success: Boolean,
+    val servers: List<ReAnimeServer>,
+)
+
+data class ReAnimeServer(
+    @param:JsonProperty($$"$id")
+    val id: String,
+    val serverName: String,
+    val dataLink: String,
+    val dataType: String,
+    @param:JsonProperty("continue")
+    val continue_field: Boolean,
+    val softsub: Boolean,
+)
+
+data class ResolvedReAnime(
+    val result: ResolvedReAnimeResult,
+)
+
+data class ResolvedReAnimeResult(
+    val token: String,
+    val state: ResolvedReAnimeState,
+)
+
+data class ResolvedReAnimeState(
+    val token: String,
+)
+
+data class ReAnimeStream(
+    val result: ReAnimeStreamResult,
+)
+
+data class ReAnimeStreamResult(
+    val stream: String,
+)
+

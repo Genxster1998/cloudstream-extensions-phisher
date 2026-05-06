@@ -204,6 +204,7 @@ class StreamPlayPlugin: Plugin() {
         registerExtractorAPI(Iqsmartgames())
         registerExtractorAPI(Shikshakdaak())
         registerExtractorAPI(Gdshine())
+        registerExtractorAPI(FlixCloud())
 
         openSettings = { ctx ->
             val act = ctx as AppCompatActivity

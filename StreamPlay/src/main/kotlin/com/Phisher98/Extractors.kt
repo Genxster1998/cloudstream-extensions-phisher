@@ -28,6 +28,7 @@ import com.lagradost.cloudstream3.extractors.Voe
 import com.lagradost.cloudstream3.network.CloudflareKiller
 import com.lagradost.cloudstream3.network.WebViewResolver
 import com.lagradost.cloudstream3.newSubtitleFile
+import com.lagradost.cloudstream3.utils.AppUtils.toJson
 import com.lagradost.cloudstream3.utils.AppUtils.tryParseJson
 import com.lagradost.cloudstream3.utils.ExtractorApi
 import com.lagradost.cloudstream3.utils.ExtractorLink
@@ -1175,7 +1176,6 @@ class OFile : ExtractorApi() {
         val cf = CloudflareKiller()
 
         val redirectedUrl = app.get(url, interceptor = cf).url
-        Log.d("Phisher", redirectedUrl)
 
         val idIndex = redirectedUrl.indexOf("/s/")
         if (idIndex == -1) return
@@ -1189,7 +1189,6 @@ class OFile : ExtractorApi() {
             interceptor = cf
         ).url
 
-        Log.d("Phisher", hubcloudUrl)
 
         loadExtractor(
             hubcloudUrl,
@@ -2748,7 +2747,7 @@ open class Rapidshare : ExtractorApi() {
             }
 
             val tracks = result.optJSONArray("tracks") ?: JSONArray()
-            Log.d("Phisher",tracks.toString())
+
             for (i in 0 until tracks.length()) {
                 val trackObj = tracks.optJSONObject(i) ?: continue
                 val label = trackObj.optString("label").trim().takeIf { it.isNotEmpty() }
@@ -3598,7 +3597,7 @@ class Gdshine : ExtractorApi() {
             .parsedSafe<Worker>()
             ?.data ?: return
 
-        callback(
+        callback.invoke(
             newExtractorLink(
                 name,
                 "$referer",
@@ -3625,4 +3624,128 @@ class Gdshine : ExtractorApi() {
     data class WorkerData(
         val copyUrl: String
     )
+}
+
+class FlixCloud : ExtractorApi() {
+
+    override val name = "FlixCloud"
+    override val mainUrl = "https://flixcloud.cc"
+    override val requiresReferer = false
+
+    override suspend fun getUrl(
+        url: String,
+        referer: String?,
+        subtitleCallback: (SubtitleFile) -> Unit,
+        callback: (ExtractorLink) -> Unit,
+    ) {
+        val headers = mapOf("Referer" to "$mainUrl/")
+        val res = app.get(url, headers = headers).document
+
+        val script = res.selectFirst("script:containsData(video_id)")
+            ?.data()
+            ?: return
+
+        val start = script.indexOf("data:{")
+        if (start == -1) return
+
+        val from = script.indexOf('{', start)
+
+        var depth = 0
+        var end = -1
+
+        for (i in from until script.length) {
+            when (script[i]) {
+                '{' -> depth++
+                '}' -> {
+                    depth--
+                    if (depth == 0) {
+                        end = i
+                        break
+                    }
+                }
+            }
+        }
+
+        if (end == -1) return
+
+        val rawData = script.substring(from, end + 1).toJson()
+        val data = JSONObject(
+            rawData.replace(
+                Regex("""([{,]\s*)([A-Za-z0-9_]+)(\s*:)"""),
+                "$1\"$2\"$3"
+            )
+        )
+
+        data.optJSONArray("subtitles")?.let { subtitles ->
+            for (i in 0 until subtitles.length()) {
+                subtitles.optJSONObject(i)?.run {
+                    subtitleCallback.invoke(
+                        SubtitleFile(
+                            optString("language"),
+                            optString("url")
+                        )
+                    )
+                }
+            }
+        }
+
+        data.remove("subtitles")
+
+        val body = JSONObject()
+            .put("data", data)
+            .toString()
+
+        val resolvedRes = app.post(
+            "https://enc-dec.app/api/dec-reanime?type=resolve",
+            requestBody = body.toRequestBody(
+                "application/json".toMediaType()
+            ),
+            timeout = 10000L
+        )
+
+        val resolvedJson = JSONObject(resolvedRes.text)
+
+        val resolved = resolvedRes
+            .parsedSafe<ResolvedReAnime>()
+            ?.result ?: return
+
+        val tokenResponse = app.get(
+            "$mainUrl/api/m3u8/${resolved.token}",
+            headers = mapOf(
+                "User-Agent" to USER_AGENT,
+                "Referer" to "$mainUrl/"
+            )
+        )
+
+        val decryptBody = JSONObject()
+            .put(
+                "data",
+                JSONObject()
+                    .put(
+                        "state",
+                        resolvedJson
+                            .getJSONObject("result")
+                            .getJSONObject("state")
+                    )
+                    .put(
+                        "token_response",
+                        JSONObject(tokenResponse.text)
+                    )
+            ).toString()
+
+        val decrypted = app.post(
+            "https://enc-dec.app/api/dec-reanime?type=decrypt",
+            requestBody = decryptBody.toRequestBody(
+                "application/json".toMediaType()
+            ),
+            timeout = 10000L
+        ).parsedSafe<ReAnimeStream>()?.result ?: return
+
+
+        generateM3u8(
+            name,
+            decrypted.stream,
+            mainUrl
+        ).forEach(callback)
+    }
 }
