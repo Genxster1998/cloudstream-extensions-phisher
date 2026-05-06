@@ -14,6 +14,7 @@ import com.phisher98.StreamPlayExtractor.invokeBollyflix
 import com.phisher98.StreamPlayExtractor.invokeCineVood
 import com.phisher98.StreamPlayExtractor.invokeDahmerMovies
 import com.phisher98.StreamPlayExtractor.invokeDooflix
+import com.phisher98.StreamPlayExtractor.invokeDudefilms
 import com.phisher98.StreamPlayExtractor.invokeFilmyfiy
 import com.phisher98.StreamPlayExtractor.invokeHdmovie2
 import com.phisher98.StreamPlayExtractor.invokeHexa
@@ -310,6 +311,9 @@ private val providers by lazy {
         },
         Provider("vaplayer", "Vaplayer") { res, _, callback, _, _ ->
             if (!res.isAnime) invokevaplayer(res.id, res.season, res.episode, callback)
+        },
+        Provider("Dudefilms", "Dudefilms") { res, subtitleCallback, callback, _, _ ->
+            if (!res.isAnime) invokeDudefilms(res.imdbId, res.season, res.episode, subtitleCallback, callback)
         }
     )
 }

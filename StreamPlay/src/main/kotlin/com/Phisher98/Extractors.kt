@@ -1940,7 +1940,7 @@ open class Gofile : ExtractorApi() {
     override val requiresReferer = false
     private val mainApi = "https://api.gofile.io"
     private val browserLanguage = "en-GB"
-    private val secret = "gf2026x"
+    private val secret = "5d4f7g8sd45fsd"
 
     override suspend fun getUrl(
         url: String,
@@ -2013,29 +2013,28 @@ open class Gofile : ExtractorApi() {
     }
 
     data class AccountResponse(
-        @JsonProperty("data") val data: AccountData? = null
+        @param:JsonProperty("data") val data: AccountData? = null
     )
 
     data class AccountData(
-        @JsonProperty("token") val token: String? = null
+        @param:JsonProperty("token") val token: String? = null
     )
 
     data class GofileResponse(
-        @JsonProperty("data") val data: GofileData? = null
+        @param:JsonProperty("data") val data: GofileData? = null
     )
 
     data class GofileData(
-        @JsonProperty("children") val children: Map<String, GofileFile>? = null
+        @param:JsonProperty("children") val children: Map<String, GofileFile>? = null
     )
 
     data class GofileFile(
-        @JsonProperty("type") val type: String? = null,
-        @JsonProperty("name") val name: String? = null,
-        @JsonProperty("link") val link: String? = null,
-        @JsonProperty("size") val size: Long? = 0L
+        @param:JsonProperty("type") val type: String? = null,
+        @param:JsonProperty("name") val name: String? = null,
+        @param:JsonProperty("link") val link: String? = null,
+        @param:JsonProperty("size") val size: Long? = 0L
     )
 }
-
 
 class UqloadsXyz : ExtractorApi() {
     override val name = "Uqloadsxyz"
