@@ -22,6 +22,7 @@ android {
         buildConfigField("String", "SUPERSTREAM_FOURTH_API", "\"${properties.getProperty("SUPERSTREAM_FOURTH_API")}\"")
         buildConfigField("String", "SUPERSTREAM_FIRST_API", "\"${properties.getProperty("SUPERSTREAM_FIRST_API")}\"")
         buildConfigField("String", "PROXYAPI", "\"${properties.getProperty("PROXYAPI")}\"")
+        buildConfigField("String", "KAISVA", "\"${properties.getProperty("KAISVA")}\"")
         buildConfigField("String", "MOVIEBOX_SECRET_KEY_ALT", "\"${properties.getProperty("MOVIEBOX_SECRET_KEY_ALT")}\"")
         buildConfigField("String", "MOVIEBOX_SECRET_KEY_DEFAULT", "\"${properties.getProperty("MOVIEBOX_SECRET_KEY_DEFAULT")}\"")
         buildConfigField("String", "KAIMEG", "\"${properties.getProperty("KAIMEG")}\"")
