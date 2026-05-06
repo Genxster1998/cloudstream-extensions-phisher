@@ -3,25 +3,25 @@ package com.PublicSportsIPTV
 import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Root(
-    @JsonProperty("Author")
+    @param:JsonProperty("Author")
     val author: String,
     val name: String,
-    @JsonProperty("last_updated")
+    @param:JsonProperty("last_updated")
     val lastUpdated: String,
     val headers: Headers,
-    @JsonProperty("total_matches")
+    @param:JsonProperty("total_matches")
     val totalMatches: Long,
-    @JsonProperty("live_matches")
+    @param:JsonProperty("live_matches")
     val liveMatches: Long,
-    @JsonProperty("upcoming_matches")
+    @param:JsonProperty("upcoming_matches")
     val upcomingMatches: Long,
     val matches: List<Match>,
 )
 
 data class Headers(
-    @JsonProperty("User-Agent")
+    @param:JsonProperty("User-Agent")
     val userAgent: String,
-    @JsonProperty("Referer")
+    @param:JsonProperty("Referer")
     val referer: String,
 )
 
@@ -29,41 +29,41 @@ data class Match(
     val category: String,
     val title: String,
     val tournament: String,
-    @JsonProperty("match_id")
+    @param:JsonProperty("match_id")
     val matchId: Long,
     val status: String,
     val streamingStatus: String,
     val startTime: String,
     val startDate: String,
     val image: String,
-    @JsonProperty("image_cdn")
+    @param:JsonProperty("image_cdn")
     val imageCdn: ImageCdn,
     val teams: List<Team>,
     val language: String,
-    @JsonProperty("adfree_stream")
+    @param:JsonProperty("adfree_stream")
     val adfreeStream: String?,
-    @JsonProperty("dai_stream")
+    @param:JsonProperty("dai_stream")
     val daiStream: String?,
-    @JsonProperty("STREAMING_CDN")
+    @param:JsonProperty("STREAMING_CDN")
     val streamingCdn: StreamingCdn,
 )
 
 data class ImageCdn(
-    @JsonProperty("TATAPLAY")
+    @param:JsonProperty("TATAPLAY")
     val tataplay: String,
-    @JsonProperty("APP")
+    @param:JsonProperty("APP")
     val app: String,
-    @JsonProperty("PLAYBACK")
+    @param:JsonProperty("PLAYBACK")
     val playback: String?,
-    @JsonProperty("LOGO")
+    @param:JsonProperty("LOGO")
     val logo: String,
-    @JsonProperty("SPORTS")
+    @param:JsonProperty("SPORTS")
     val sports: String,
-    @JsonProperty("BG_IMAGE")
+    @param:JsonProperty("BG_IMAGE")
     val bgImage: String,
-    @JsonProperty("SPORT_BY_IMAGE")
+    @param:JsonProperty("SPORT_BY_IMAGE")
     val sportByImage: String,
-    @JsonProperty("CLOUDFARE")
+    @param:JsonProperty("CLOUDFARE")
     val cloudfare: String?,
 )
 
@@ -103,32 +103,32 @@ data class Cricket(
 
 data class StreamingCdn(
     val language: String,
-    @JsonProperty("Primary_Playback_URL")
+    @param:JsonProperty("Primary_Playback_URL")
     val primaryPlaybackUrl: String?,
-    @JsonProperty("fancode_cdn")
+    @param:JsonProperty("fancode_cdn")
     val fancodeCdn: String?,
-    @JsonProperty("dai_google_cdn")
+    @param:JsonProperty("dai_google_cdn")
     val daiGoogleCdn: String?,
-    @JsonProperty("cloudfront_cdn")
+    @param:JsonProperty("cloudfront_cdn")
     val cloudfrontCdn: String?,
-    @JsonProperty("sony_cdn")
+    @param:JsonProperty("sony_cdn")
     val sonyCdn: String?,
 )
 
 
 data class LoadURL(
-    @JsonProperty("Primary_Playback_URL")
+    @param:JsonProperty("Primary_Playback_URL")
     val primaryPlaybackUrl: String?,
-    @JsonProperty("fancode_cdn")
+    @param:JsonProperty("fancode_cdn")
     val fancodeCdn: String?,
-    @JsonProperty("dai_google_cdn")
+    @param:JsonProperty("dai_google_cdn")
     val daiGoogleCdn: String?,
-    @JsonProperty("cloudfront_cdn")
+    @param:JsonProperty("cloudfront_cdn")
     val cloudfrontCdn: String?,
-    @JsonProperty("title")
+    @param:JsonProperty("title")
     val title: String?,
-    @JsonProperty("tournament")
+    @param:JsonProperty("tournament")
     val tournament: String?,
-    @JsonProperty("poster")
+    @param:JsonProperty("poster")
     val poster: String?,
 )

@@ -35,7 +35,7 @@ data class Loadlinks(
     val streamwish: String,
     val vihide: String,
     val hdlink: String?,
-    @JsonProperty("originalURL")
+    @param:JsonProperty("originalURL")
     val originalUrl: String?,
     val drive: String?,
     val goFile: String?,

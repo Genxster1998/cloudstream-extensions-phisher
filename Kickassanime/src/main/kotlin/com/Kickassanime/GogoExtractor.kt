@@ -152,17 +152,17 @@ object GogoExtractor {
     }
 
     data class GogoSources(
-        @JsonProperty("source") val source: List<GogoSource>?,
-        @JsonProperty("sourceBk") val sourceBk: List<GogoSource>?,
+        @param:JsonProperty("source") val source: List<GogoSource>?,
+        @param:JsonProperty("sourceBk") val sourceBk: List<GogoSource>?,
         //val track: List<Any?>,
         //val advertising: List<Any?>,
         //val linkiframe: String
     )
 
     data class GogoSource(
-        @JsonProperty("file") val file: String,
-        @JsonProperty("label") val label: String?,
-        @JsonProperty("type") val type: String?,
-        @JsonProperty("default") val default: String? = null
+        @param:JsonProperty("file") val file: String,
+        @param:JsonProperty("label") val label: String?,
+        @param:JsonProperty("type") val type: String?,
+        @param:JsonProperty("default") val default: String? = null
     )
 }

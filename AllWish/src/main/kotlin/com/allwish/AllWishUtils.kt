@@ -101,30 +101,30 @@ fun parseAnimeData(jsonString: String): MetaAnimeData? {
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class ImageData(
-    @JsonProperty("coverType") val coverType: String?,
-    @JsonProperty("url") val url: String?
+    @param:JsonProperty("coverType") val coverType: String?,
+    @param:JsonProperty("url") val url: String?
 )
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class MetaEpisode(
-    @JsonProperty("episode") val episode: String?,
-    @JsonProperty("airdate") val airdate: String?,
-    @JsonProperty("airDateUtc") val airDateUtc: String?,
-    @JsonProperty("length") val length: Int?,
-    @JsonProperty("runtime") val runtime: Int?,
-    @JsonProperty("image") val image: String?,
-    @JsonProperty("title") val title: Map<String, String>?,
-    @JsonProperty("overview") val overview: String?,
-    @JsonProperty("rating") val rating: String?,
-    @JsonProperty("finaleType") val finaleType: String?
+    @param:JsonProperty("episode") val episode: String?,
+    @param:JsonProperty("airdate") val airdate: String?,
+    @param:JsonProperty("airDateUtc") val airDateUtc: String?,
+    @param:JsonProperty("length") val length: Int?,
+    @param:JsonProperty("runtime") val runtime: Int?,
+    @param:JsonProperty("image") val image: String?,
+    @param:JsonProperty("title") val title: Map<String, String>?,
+    @param:JsonProperty("overview") val overview: String?,
+    @param:JsonProperty("rating") val rating: String?,
+    @param:JsonProperty("finaleType") val finaleType: String?
 )
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class MetaAnimeData(
-    @JsonProperty("titles") val titles: Map<String, String>? = null,
-    @JsonProperty("images") val images: List<ImageData>? = null,
-    @JsonProperty("episodes") val episodes: Map<String, MetaEpisode>? = null,
+    @param:JsonProperty("titles") val titles: Map<String, String>? = null,
+    @param:JsonProperty("images") val images: List<ImageData>? = null,
+    @param:JsonProperty("episodes") val episodes: Map<String, MetaEpisode>? = null,
 )
 
 

@@ -374,7 +374,7 @@ class AnimeKai : MainAPI() {
     }
 
     data class Response(
-        @JsonProperty("result") val result: String
+        @param:JsonProperty("result") val result: String
     ) {
         fun getDocument(): Document {
             return Jsoup.parse(result)

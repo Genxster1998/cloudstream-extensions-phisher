@@ -16,71 +16,71 @@ import com.phisher98.UltimaStorageManager as sm
 object WatchSyncUtils {
 
     data class WatchSyncCreds(
-        @JsonProperty("token") var token: String? = null,
-        @JsonProperty("projectNum") var projectNum: Int? = null,
-        @JsonProperty("deviceName") var deviceName: String? = null,
-        @JsonProperty("deviceId") var deviceId: String? = null,  // draftIssueID
-        @JsonProperty("itemId") var itemId: String? = null,       // projectItemID
-        @JsonProperty("projectId") var projectId: String? = null,
-        @JsonProperty("isThisDeviceSync") var isThisDeviceSync: Boolean = false,
-        @JsonProperty("enabledDevices") var enabledDevices: MutableList<String>? = null
+        @param:JsonProperty("token") var token: String? = null,
+        @param:JsonProperty("projectNum") var projectNum: Int? = null,
+        @param:JsonProperty("deviceName") var deviceName: String? = null,
+        @param:JsonProperty("deviceId") var deviceId: String? = null,  // draftIssueID
+        @param:JsonProperty("itemId") var itemId: String? = null,       // projectItemID
+        @param:JsonProperty("projectId") var projectId: String? = null,
+        @param:JsonProperty("isThisDeviceSync") var isThisDeviceSync: Boolean = false,
+        @param:JsonProperty("enabledDevices") var enabledDevices: MutableList<String>? = null
     ) {
 
         // --- API Response Models ---
-        data class APIRes(@JsonProperty("data") var data: Data) {
+        data class APIRes(@param:JsonProperty("data") var data: Data) {
             data class Data(
-                @JsonProperty("viewer") var viewer: Viewer?,
-                @JsonProperty("addProjectV2DraftIssue") var issue: Issue?,
-                @JsonProperty("deleteProjectV2Item") var delItem: DelItem?
+                @param:JsonProperty("viewer") var viewer: Viewer?,
+                @param:JsonProperty("addProjectV2DraftIssue") var issue: Issue?,
+                @param:JsonProperty("deleteProjectV2Item") var delItem: DelItem?
             ) {
-                data class Viewer(@JsonProperty("projectV2") var projectV2: ProjectV2) {
+                data class Viewer(@param:JsonProperty("projectV2") var projectV2: ProjectV2) {
                     data class ProjectV2(
-                        @JsonProperty("id") var id: String,
-                        @JsonProperty("items") var items: Items?
+                        @param:JsonProperty("id") var id: String,
+                        @param:JsonProperty("items") var items: Items?
                     ) {
                         data class Items(
-                            @JsonProperty("nodes") var nodes: Array<Node>?,
+                            @param:JsonProperty("nodes") var nodes: Array<Node>?,
                         ) {
                             data class Node(
-                                @JsonProperty("id") var id: String,
-                                @JsonProperty("content") var content: Content
+                                @param:JsonProperty("id") var id: String,
+                                @param:JsonProperty("content") var content: Content
                             ) {
                                 data class Content(
-                                    @JsonProperty("id") var id: String,
-                                    @JsonProperty("title") var title: String,
-                                    @JsonProperty("bodyText") var bodyText: String,
+                                    @param:JsonProperty("id") var id: String,
+                                    @param:JsonProperty("title") var title: String,
+                                    @param:JsonProperty("bodyText") var bodyText: String,
                                 )
                             }
                         }
                     }
                 }
 
-                data class Issue(@JsonProperty("projectItem") var projectItem: ProjectItem) {
+                data class Issue(@param:JsonProperty("projectItem") var projectItem: ProjectItem) {
                     data class ProjectItem(
-                        @JsonProperty("id") var id: String,
-                        @JsonProperty("content") var content: Content
+                        @param:JsonProperty("id") var id: String,
+                        @param:JsonProperty("content") var content: Content
                     ) {
-                        data class Content(@JsonProperty("id") var id: String)
+                        data class Content(@param:JsonProperty("id") var id: String)
                     }
                 }
 
-                data class DelItem(@JsonProperty("deletedItemId") var deletedItemId: String)
+                data class DelItem(@param:JsonProperty("deletedItemId") var deletedItemId: String)
             }
         }
 
         data class SyncDevice(
-            @JsonProperty("name") var name: String,
-            @JsonProperty("deviceId") var deviceId: String,
-            @JsonProperty("itemId") var itemId: String,
-            @JsonProperty("payload") var payload: SyncPayload? = null
+            @param:JsonProperty("name") var name: String,
+            @param:JsonProperty("deviceId") var deviceId: String,
+            @param:JsonProperty("itemId") var itemId: String,
+            @param:JsonProperty("payload") var payload: SyncPayload? = null
         )
 
         data class SyncPayload(
-            @JsonProperty("resumeWatching") val resumeWatching: List<ResumeWatchingResult>? = null,
-            @JsonProperty("data") val data: Map<String, String>? = null,
-            @JsonProperty("extensions") val extensions: Array<UltimaUtils.ExtensionInfo>? = null,
-            @JsonProperty("metaProviders") val metaProviders: Array<Pair<String, Boolean>>? = null,
-            @JsonProperty("mediaProviders") val mediaProviders: Array<UltimaUtils.MediaProviderState>? = null,
+            @param:JsonProperty("resumeWatching") val resumeWatching: List<ResumeWatchingResult>? = null,
+            @param:JsonProperty("data") val data: Map<String, String>? = null,
+            @param:JsonProperty("extensions") val extensions: Array<UltimaUtils.ExtensionInfo>? = null,
+            @param:JsonProperty("metaProviders") val metaProviders: Array<Pair<String, Boolean>>? = null,
+            @param:JsonProperty("mediaProviders") val mediaProviders: Array<UltimaUtils.MediaProviderState>? = null,
             val extNameOnHome: Boolean? = null,
         )
 

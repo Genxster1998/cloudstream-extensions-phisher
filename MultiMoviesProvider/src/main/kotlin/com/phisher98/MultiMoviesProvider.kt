@@ -152,8 +152,8 @@ class MultiMoviesProvider : MainAPI() { // all providers must be an instance of 
     }
 
     data class TrailerUrl(
-        @JsonProperty("embed_url") var embedUrl: String?,
-        @JsonProperty("type") var type: String?
+        @param:JsonProperty("embed_url") var embedUrl: String?,
+        @param:JsonProperty("type") var type: String?
     )
 
     override suspend fun load(url: String): LoadResponse? {
@@ -302,9 +302,9 @@ class MultiMoviesProvider : MainAPI() { // all providers must be an instance of 
     }
 
     data class ResponseHash(
-        @JsonProperty("embed_url") val embed_url: String,
-        @JsonProperty("key") val key: String? = null,
-        @JsonProperty("type") val type: String? = null,
+        @param:JsonProperty("embed_url") val embed_url: String,
+        @param:JsonProperty("key") val key: String? = null,
+        @param:JsonProperty("type") val type: String? = null,
     )
 
 

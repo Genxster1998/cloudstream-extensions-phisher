@@ -1,7 +1,6 @@
 package com.phisher98
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.lagradost.api.Log
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.mvvm.safeApiCall
 import com.lagradost.cloudstream3.utils.AppUtils.parseJson
@@ -17,7 +16,6 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.json.JSONObject
-import java.util.ArrayList
 
 class KisskhProvider : MainAPI() {
     override var mainUrl = "https://kisskh.nl"
@@ -395,43 +393,43 @@ class KisskhProvider : MainAPI() {
     )
 
     data class Sources(
-        @JsonProperty("Video") val video: String?,
-        @JsonProperty("ThirdParty") val thirdParty: String?,
+        @param:JsonProperty("Video") val video: String?,
+        @param:JsonProperty("ThirdParty") val thirdParty: String?,
     )
 
     data class Subtitle(
-        @JsonProperty("src") val src: String?,
-        @JsonProperty("label") val label: String?,
+        @param:JsonProperty("src") val src: String?,
+        @param:JsonProperty("label") val label: String?,
     )
 
     data class Responses(
-        @JsonProperty("data") val data: ArrayList<Media>? = arrayListOf(),
+        @param:JsonProperty("data") val data: ArrayList<Media>? = arrayListOf(),
     )
 
     data class Media(
-        @JsonProperty("episodesCount") val episodesCount: Int?,
-        @JsonProperty("thumbnail") val thumbnail: String?,
-        @JsonProperty("label") val label: String?,
-        @JsonProperty("id") val id: Int?,
-        @JsonProperty("title") val title: String?,
+        @param:JsonProperty("episodesCount") val episodesCount: Int?,
+        @param:JsonProperty("thumbnail") val thumbnail: String?,
+        @param:JsonProperty("label") val label: String?,
+        @param:JsonProperty("id") val id: Int?,
+        @param:JsonProperty("title") val title: String?,
     )
 
     data class Episodes(
-        @JsonProperty("id") val id: Int?,
-        @JsonProperty("number") val number: Double?,
-        @JsonProperty("sub") val sub: Int?,
+        @param:JsonProperty("id") val id: Int?,
+        @param:JsonProperty("number") val number: Double?,
+        @param:JsonProperty("sub") val sub: Int?,
     )
 
     data class MediaDetail(
-        @JsonProperty("description") val description: String?,
-        @JsonProperty("releaseDate") val releaseDate: String?,
-        @JsonProperty("status") val status: String?,
-        @JsonProperty("type") val type: String?,
-        @JsonProperty("country") val country: String?,
-        @JsonProperty("episodes") val episodes: ArrayList<Episodes>? = arrayListOf(),
-        @JsonProperty("thumbnail") val thumbnail: String?,
-        @JsonProperty("id") val id: Int?,
-        @JsonProperty("title") val title: String?,
+        @param:JsonProperty("description") val description: String?,
+        @param:JsonProperty("releaseDate") val releaseDate: String?,
+        @param:JsonProperty("status") val status: String?,
+        @param:JsonProperty("type") val type: String?,
+        @param:JsonProperty("country") val country: String?,
+        @param:JsonProperty("episodes") val episodes: ArrayList<Episodes>? = arrayListOf(),
+        @param:JsonProperty("thumbnail") val thumbnail: String?,
+        @param:JsonProperty("id") val id: Int?,
+        @param:JsonProperty("title") val title: String?,
     )
 
     data class Key(

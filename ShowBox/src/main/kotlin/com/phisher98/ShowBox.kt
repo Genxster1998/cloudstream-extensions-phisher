@@ -794,41 +794,41 @@ oFuZne+lYcCPMNDXdku6wKdf9gSnOSHOGMu8TvHcud4uIDYmFH5qabJL5GDoQi7Q
     )
 
     data class ParsedLinkData(
-        @JsonProperty("seconds") val seconds: Int? = null,
-        @JsonProperty("quality") val quality: ArrayList<String> = arrayListOf(),
-        @JsonProperty("list") val list: ArrayList<LinkList> = arrayListOf()
+        @param:JsonProperty("seconds") val seconds: Int? = null,
+        @param:JsonProperty("quality") val quality: ArrayList<String> = arrayListOf(),
+        @param:JsonProperty("list") val list: ArrayList<LinkList> = arrayListOf()
     )
 
     data class SubtitleDataProp(
-        @JsonProperty("code") val code: Int? = null,
-        @JsonProperty("msg") val msg: String? = null,
-        @JsonProperty("data") val data: PrivateSubtitleData? = PrivateSubtitleData()
+        @param:JsonProperty("code") val code: Int? = null,
+        @param:JsonProperty("msg") val msg: String? = null,
+        @param:JsonProperty("data") val data: PrivateSubtitleData? = PrivateSubtitleData()
     )
 
     data class Subtitles(
-        @JsonProperty("sid") val sid: Int? = null,
-        @JsonProperty("mid") val mid: String? = null,
-        @JsonProperty("file_path") val filePath: String? = null,
-        @JsonProperty("lang") val lang: String? = null,
-        @JsonProperty("language") val language: String? = null,
-        @JsonProperty("delay") val delay: Int? = null,
-        @JsonProperty("point") val point: String? = null,
-        @JsonProperty("order") val order: Int? = null,
-        @JsonProperty("support_total") val support_total: Int? = null,
-        @JsonProperty("admin_order") val adminOrder: Int? = null,
-        @JsonProperty("myselect") val myselect: Int? = null,
-        @JsonProperty("add_time") val addTime: Long? = null,
-        @JsonProperty("count") val count: Int? = null
+        @param:JsonProperty("sid") val sid: Int? = null,
+        @param:JsonProperty("mid") val mid: String? = null,
+        @param:JsonProperty("file_path") val filePath: String? = null,
+        @param:JsonProperty("lang") val lang: String? = null,
+        @param:JsonProperty("language") val language: String? = null,
+        @param:JsonProperty("delay") val delay: Int? = null,
+        @param:JsonProperty("point") val point: String? = null,
+        @param:JsonProperty("order") val order: Int? = null,
+        @param:JsonProperty("support_total") val support_total: Int? = null,
+        @param:JsonProperty("admin_order") val adminOrder: Int? = null,
+        @param:JsonProperty("myselect") val myselect: Int? = null,
+        @param:JsonProperty("add_time") val addTime: Long? = null,
+        @param:JsonProperty("count") val count: Int? = null
     )
 
     data class SubtitleList(
-        @JsonProperty("language") val language: String? = null,
-        @JsonProperty("subtitles") val subtitles: ArrayList<Subtitles> = arrayListOf()
+        @param:JsonProperty("language") val language: String? = null,
+        @param:JsonProperty("subtitles") val subtitles: ArrayList<Subtitles> = arrayListOf()
     )
 
     data class PrivateSubtitleData(
-        @JsonProperty("select") val select: ArrayList<String> = arrayListOf(),
-        @JsonProperty("list") val list: ArrayList<SubtitleList> = arrayListOf()
+        @param:JsonProperty("select") val select: ArrayList<String> = arrayListOf(),
+        @param:JsonProperty("list") val list: ArrayList<SubtitleList> = arrayListOf()
     )
 
     override suspend fun loadLinks(
@@ -893,52 +893,52 @@ oFuZne+lYcCPMNDXdku6wKdf9gSnOSHOGMu8TvHcud4uIDYmFH5qabJL5GDoQi7Q
     }
 
     data class ExternalResponse(
-        @JsonProperty("data") val data: Data? = null,
+        @param:JsonProperty("data") val data: Data? = null,
     ) {
         data class Data(
-            @JsonProperty("link") val link: String? = null,
-            @JsonProperty("share_link") val shareLink: String? = null, // add this
-            @JsonProperty("file_list") val file_list: ArrayList<FileList>? = arrayListOf(),
+            @param:JsonProperty("link") val link: String? = null,
+            @param:JsonProperty("share_link") val shareLink: String? = null, // add this
+            @param:JsonProperty("file_list") val file_list: ArrayList<FileList>? = arrayListOf(),
         ) {
             data class FileList(
-                @JsonProperty("fid") val fid: Long? = null,
-                @JsonProperty("file_name") val file_name: String? = null,
-                @JsonProperty("oss_fid") val oss_fid: Long? = null,
+                @param:JsonProperty("fid") val fid: Long? = null,
+                @param:JsonProperty("file_name") val file_name: String? = null,
+                @param:JsonProperty("oss_fid") val oss_fid: Long? = null,
             )
         }
     }
 
     data class WatchsomuchTorrents(
-        @JsonProperty("id") val id: Int? = null,
-        @JsonProperty("movieId") val movieId: Int? = null,
-        @JsonProperty("season") val season: Int? = null,
-        @JsonProperty("episode") val episode: Int? = null,
+        @param:JsonProperty("id") val id: Int? = null,
+        @param:JsonProperty("movieId") val movieId: Int? = null,
+        @param:JsonProperty("season") val season: Int? = null,
+        @param:JsonProperty("episode") val episode: Int? = null,
     )
 
     data class WatchsomuchMovies(
-        @JsonProperty("torrents") val torrents: ArrayList<WatchsomuchTorrents>? = arrayListOf(),
+        @param:JsonProperty("torrents") val torrents: ArrayList<WatchsomuchTorrents>? = arrayListOf(),
     )
 
     data class WatchsomuchResponses(
-        @JsonProperty("movie") val movie: WatchsomuchMovies? = null,
+        @param:JsonProperty("movie") val movie: WatchsomuchMovies? = null,
     )
 
     data class WatchsomuchSubtitles(
-        @JsonProperty("url") val url: String? = null,
-        @JsonProperty("label") val label: String? = null,
+        @param:JsonProperty("url") val url: String? = null,
+        @param:JsonProperty("label") val label: String? = null,
     )
 
     data class WatchsomuchSubResponses(
-        @JsonProperty("subtitles") val subtitles: ArrayList<WatchsomuchSubtitles>? = arrayListOf(),
+        @param:JsonProperty("subtitles") val subtitles: ArrayList<WatchsomuchSubtitles>? = arrayListOf(),
     )
 
     data class OsSubtitles(
-        @JsonProperty("url") val url: String? = null,
-        @JsonProperty("lang") val lang: String? = null,
+        @param:JsonProperty("url") val url: String? = null,
+        @param:JsonProperty("lang") val lang: String? = null,
     )
 
     data class OsResult(
-        @JsonProperty("subtitles") val subtitles: ArrayList<OsSubtitles>? = arrayListOf(),
+        @param:JsonProperty("subtitles") val subtitles: ArrayList<OsSubtitles>? = arrayListOf(),
     )
 
 }

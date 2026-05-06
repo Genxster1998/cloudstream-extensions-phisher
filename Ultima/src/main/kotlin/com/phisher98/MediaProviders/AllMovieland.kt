@@ -76,28 +76,28 @@ class AllMovielandMediaProvider : MediaProvider() {
 
     // #region - Data classes
     data class AllMovielandPlaylist(
-            @JsonProperty("file") val file: String? = null,
-            @JsonProperty("key") val key: String? = null,
-            @JsonProperty("href") val href: String? = null,
+            @param:JsonProperty("file") val file: String? = null,
+            @param:JsonProperty("key") val key: String? = null,
+            @param:JsonProperty("href") val href: String? = null,
     )
 
     data class AllMovielandServer(
-            @JsonProperty("title") val title: String? = null,
-            @JsonProperty("id") val id: String? = null,
-            @JsonProperty("file") val file: String? = null,
-            @JsonProperty("folder")
+            @param:JsonProperty("title") val title: String? = null,
+            @param:JsonProperty("id") val id: String? = null,
+            @param:JsonProperty("file") val file: String? = null,
+            @param:JsonProperty("folder")
             val folder: ArrayList<AllMovielandSeasonFolder>? = arrayListOf(),
     ) {
         data class AllMovielandSeasonFolder(
-                @JsonProperty("episode") val episode: String? = null,
-                @JsonProperty("id") val id: String? = null,
-                @JsonProperty("folder")
+                @param:JsonProperty("episode") val episode: String? = null,
+                @param:JsonProperty("id") val id: String? = null,
+                @param:JsonProperty("folder")
                 val folder: ArrayList<AllMovielandEpisodeFolder>? = arrayListOf(),
         ) {
             data class AllMovielandEpisodeFolder(
-                    @JsonProperty("title") val title: String? = null,
-                    @JsonProperty("id") val id: String? = null,
-                    @JsonProperty("file") val file: String? = null,
+                    @param:JsonProperty("title") val title: String? = null,
+                    @param:JsonProperty("id") val id: String? = null,
+                    @param:JsonProperty("file") val file: String? = null,
             )
         }
     }

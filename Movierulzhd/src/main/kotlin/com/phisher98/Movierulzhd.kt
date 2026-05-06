@@ -479,7 +479,7 @@ open class Movierulzhd : MainAPI() {
     }
 
     data class ResponseHash(
-        @JsonProperty("embed_url") val embed_url: String,
-        @JsonProperty("type") val type: String?,
+        @param:JsonProperty("embed_url") val embed_url: String,
+        @param:JsonProperty("type") val type: String?,
     )
 }

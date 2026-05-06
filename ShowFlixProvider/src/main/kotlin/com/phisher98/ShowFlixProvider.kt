@@ -33,74 +33,74 @@ class ShowFlixProvider : MainAPI() { // all providers must be an instance of Mai
 
 
     data class TVAll(
-        @JsonProperty("results") var results: List<TVResult> = listOf()
+        @param:JsonProperty("results") var results: List<TVResult> = listOf()
     )
 
     data class TVResult(
-        @JsonProperty("objectId") var objectId: String,
-        @JsonProperty("name") var name: String,
-        @JsonProperty("posterURL") var posterURL: String?,
-        @JsonProperty("releaseYear") var releaseYear: Int?,
-        @JsonProperty("backdropURL") var backdropURL: String?,
-        @JsonProperty("genres") var genres: List<String> = listOf(),
-        @JsonProperty("storyline") var storyline: String?,
-        @JsonProperty("rating") var rating: String?,
-        @JsonProperty("tmdbId") var tmdbId: Int?,
-        @JsonProperty("hdLink") var hdLink: String?,
-        @JsonProperty("hubCloudLink") var hubCloudLink: String?,
-        @JsonProperty("languages") var languages: List<String> = listOf(),
-        @JsonProperty("createdAt") var createdAt: String?,
-        @JsonProperty("updatedAt") var updatedAt: String?,
-        @JsonProperty("seriesCategory") var seriesCategory: String?,
+        @param:JsonProperty("objectId") var objectId: String,
+        @param:JsonProperty("name") var name: String,
+        @param:JsonProperty("posterURL") var posterURL: String?,
+        @param:JsonProperty("releaseYear") var releaseYear: Int?,
+        @param:JsonProperty("backdropURL") var backdropURL: String?,
+        @param:JsonProperty("genres") var genres: List<String> = listOf(),
+        @param:JsonProperty("storyline") var storyline: String?,
+        @param:JsonProperty("rating") var rating: String?,
+        @param:JsonProperty("tmdbId") var tmdbId: Int?,
+        @param:JsonProperty("hdLink") var hdLink: String?,
+        @param:JsonProperty("hubCloudLink") var hubCloudLink: String?,
+        @param:JsonProperty("languages") var languages: List<String> = listOf(),
+        @param:JsonProperty("createdAt") var createdAt: String?,
+        @param:JsonProperty("updatedAt") var updatedAt: String?,
+        @param:JsonProperty("seriesCategory") var seriesCategory: String?,
 
         )
 
 
     data class MovieAll(
-        @JsonProperty("results") var results: List<MovieResults> = emptyList()
+        @param:JsonProperty("results") var results: List<MovieResults> = emptyList()
     )
 
     data class MovieResults(
-        @JsonProperty("objectId") val objectId: String? = null,
-        @JsonProperty("name") val name: String,
-        @JsonProperty("posterURL") val posterURL: String? = null,
-        @JsonProperty("releaseYear") val releaseYear: Int? = null,
-        @JsonProperty("backdropURL") val backdropURL: String? = null,
-        @JsonProperty("genres") val genres: List<String>? = null,
-        @JsonProperty("storyline") val storyline: String? = null,
-        @JsonProperty("rating") val rating: String? = null,
-        @JsonProperty("tmdbId") val tmdbId: Int? = null,
-        @JsonProperty("embedLinks") val embedLinks: EmbedLinks? = null,
-        @JsonProperty("hdLink") val hdLink: String? = null,
-        @JsonProperty("hubCloudLink") val hubCloudLink: String? = null,
-        @JsonProperty("languages") val languages: List<String>? = null,
-        @JsonProperty("originalURL") val originalURL: String? = null,
-        @JsonProperty("goFile") val goFile: String? = null,
+        @param:JsonProperty("objectId") val objectId: String? = null,
+        @param:JsonProperty("name") val name: String,
+        @param:JsonProperty("posterURL") val posterURL: String? = null,
+        @param:JsonProperty("releaseYear") val releaseYear: Int? = null,
+        @param:JsonProperty("backdropURL") val backdropURL: String? = null,
+        @param:JsonProperty("genres") val genres: List<String>? = null,
+        @param:JsonProperty("storyline") val storyline: String? = null,
+        @param:JsonProperty("rating") val rating: String? = null,
+        @param:JsonProperty("tmdbId") val tmdbId: Int? = null,
+        @param:JsonProperty("embedLinks") val embedLinks: EmbedLinks? = null,
+        @param:JsonProperty("hdLink") val hdLink: String? = null,
+        @param:JsonProperty("hubCloudLink") val hubCloudLink: String? = null,
+        @param:JsonProperty("languages") val languages: List<String>? = null,
+        @param:JsonProperty("originalURL") val originalURL: String? = null,
+        @param:JsonProperty("goFile") val goFile: String? = null,
         //Remove Category not Needed for Fix Recommendation
-        @JsonProperty("category") val category: String? = null,
-        @JsonProperty("drive") val drive: String? = null,
-        @JsonProperty("createdAt") val createdAt: String? = null,
-        @JsonProperty("updatedAt") val updatedAt: String? = null
+        @param:JsonProperty("category") val category: String? = null,
+        @param:JsonProperty("drive") val drive: String? = null,
+        @param:JsonProperty("createdAt") val createdAt: String? = null,
+        @param:JsonProperty("updatedAt") val updatedAt: String? = null
     )
 
     data class EmbedLinks(
-        @JsonProperty("upnshare") val upnshare: String? = null,
-        @JsonProperty("streamruby") val streamruby: String? = null,
-        @JsonProperty("streamwish") val streamwish: String? = null,
-        @JsonProperty("vihide") val vihide: String? = null
+        @param:JsonProperty("upnshare") val upnshare: String? = null,
+        @param:JsonProperty("streamruby") val streamruby: String? = null,
+        @param:JsonProperty("streamwish") val streamwish: String? = null,
+        @param:JsonProperty("vihide") val vihide: String? = null
     )
 
 
     data class MovieLinks(
-        @JsonProperty("streamruby") var streamRuby: String? = null,
-        @JsonProperty("upnshare") var upnshare: String? = null,
-        @JsonProperty("streamwish") var streamWish: String? = null,
-        @JsonProperty("vihide") var vihide: String? = null,
-        @JsonProperty("hdlink") var hdLink: String? = null,
-        @JsonProperty("originalURL") var originalURL: String? = null,
-        @JsonProperty("drive") var drive: String? = null,
-        @JsonProperty("goFile") var goFile: String? = null,
-        @JsonProperty("hubCloudLink") var hubCloudLink: String? = null
+        @param:JsonProperty("streamruby") var streamRuby: String? = null,
+        @param:JsonProperty("upnshare") var upnshare: String? = null,
+        @param:JsonProperty("streamwish") var streamWish: String? = null,
+        @param:JsonProperty("vihide") var vihide: String? = null,
+        @param:JsonProperty("hdlink") var hdLink: String? = null,
+        @param:JsonProperty("originalURL") var originalURL: String? = null,
+        @param:JsonProperty("drive") var drive: String? = null,
+        @param:JsonProperty("goFile") var goFile: String? = null,
+        @param:JsonProperty("hubCloudLink") var hubCloudLink: String? = null
     )
 
 

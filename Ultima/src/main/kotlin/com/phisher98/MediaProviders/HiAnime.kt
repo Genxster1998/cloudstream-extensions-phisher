@@ -74,8 +74,8 @@ class HiAnimeMediaProvider : MediaProvider() {
 
     // #region - Data classes
     data class ApiResponseHTML(
-            @JsonProperty("status") val status: Boolean,
-            @JsonProperty("html") val result: String
+            @param:JsonProperty("status") val status: Boolean,
+            @param:JsonProperty("html") val result: String
     ) {
         fun html(): Document {
             return Jsoup.parse(result)
@@ -83,9 +83,9 @@ class HiAnimeMediaProvider : MediaProvider() {
     }
 
     data class ServerData(
-            @JsonProperty("type") val type: String,
-            @JsonProperty("link") val link: String,
-            @JsonProperty("server") val server: Int
+            @param:JsonProperty("type") val type: String,
+            @param:JsonProperty("link") val link: String,
+            @param:JsonProperty("server") val server: Int
     )
     // #endregion - Data classes
 

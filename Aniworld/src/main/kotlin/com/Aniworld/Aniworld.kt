@@ -283,8 +283,8 @@ open class Aniworld(sharedPref: SharedPreferences?=null) : MainAPI() {
     }
 
     private data class AnimeSearch(
-        @JsonProperty("link") val link: String,
-        @JsonProperty("title") val title: String? = null,
+        @param:JsonProperty("link") val link: String,
+        @param:JsonProperty("title") val title: String? = null,
     )
 
     data class SerienstreamSearch(

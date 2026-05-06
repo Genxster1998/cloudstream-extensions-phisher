@@ -30,7 +30,7 @@ data class Result(
 
 
 data class EpRes(
-    @JsonProperty("post_id")
+    @param:JsonProperty("post_id")
     val postId: String,
     val title: String,
     val episodes: List<Episode>,
@@ -48,12 +48,12 @@ data class Episode(
 typealias Search = List<Search2>
 
 data class Search2(
-    @JsonProperty("ID")
+    @param:JsonProperty("ID")
     val id: Long,
     val title: String,
     val excerpt: String,
     val url: String,
-    @JsonProperty("post_type")
+    @param:JsonProperty("post_type")
     val postType: String,
     val year: String,
     val rating: String,

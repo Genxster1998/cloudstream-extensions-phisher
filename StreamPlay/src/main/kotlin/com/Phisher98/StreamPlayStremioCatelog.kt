@@ -264,19 +264,19 @@ class StreamPlayStremioCatelog(
     )
 
     private data class CatalogEntry(
-        @JsonProperty("name") val name: String,
-        @JsonProperty("id") val id: String,
-        @JsonProperty("poster") val poster: String?,
-        @JsonProperty("background") val background: String?,
-        @JsonProperty("description") val description: String?,
-        @JsonProperty("imdbRating") val imdbRating: String?,
-        @JsonProperty("type") val type: String?,
-        @JsonProperty("videos") val videos: List<Video>?,
-        @JsonProperty("genre") val genre: List<String>?,
-        @JsonProperty("genres") val genres: List<String> = emptyList(),
-        @JsonProperty("cast") val cast: List<String> = emptyList(),
-        @JsonProperty("trailers") val trailersSources: List<Trailer> = emptyList(),
-        @JsonProperty("year") val yearNum: String? = null
+        @param:JsonProperty("name") val name: String,
+        @param:JsonProperty("id") val id: String,
+        @param:JsonProperty("poster") val poster: String?,
+        @param:JsonProperty("background") val background: String?,
+        @param:JsonProperty("description") val description: String?,
+        @param:JsonProperty("imdbRating") val imdbRating: String?,
+        @param:JsonProperty("type") val type: String?,
+        @param:JsonProperty("videos") val videos: List<Video>?,
+        @param:JsonProperty("genre") val genre: List<String>?,
+        @param:JsonProperty("genres") val genres: List<String> = emptyList(),
+        @param:JsonProperty("cast") val cast: List<String> = emptyList(),
+        @param:JsonProperty("trailers") val trailersSources: List<Trailer> = emptyList(),
+        @param:JsonProperty("year") val yearNum: String? = null
     ) {
         fun toSearchResponse(provider: StreamPlayStremioCatelog): SearchResponse {
             return provider.newMovieSearchResponse(
@@ -331,15 +331,15 @@ class StreamPlayStremioCatelog(
     }
 
     private data class Video(
-        @JsonProperty("id") val id: String? = null,
-        @JsonProperty("title") val title: String? = null,
-        @JsonProperty("name") val name: String? = null,
-        @JsonProperty("season") val seasonNumber: Int? = null,
-        @JsonProperty("number") val number: Int? = null,
-        @JsonProperty("episode") val episode: Int? = null,
-        @JsonProperty("thumbnail") val thumbnail: String? = null,
-        @JsonProperty("overview") val overview: String? = null,
-        @JsonProperty("description") val description: String? = null,
+        @param:JsonProperty("id") val id: String? = null,
+        @param:JsonProperty("title") val title: String? = null,
+        @param:JsonProperty("name") val name: String? = null,
+        @param:JsonProperty("season") val seasonNumber: Int? = null,
+        @param:JsonProperty("number") val number: Int? = null,
+        @param:JsonProperty("episode") val episode: Int? = null,
+        @param:JsonProperty("thumbnail") val thumbnail: String? = null,
+        @param:JsonProperty("overview") val overview: String? = null,
+        @param:JsonProperty("description") val description: String? = null,
     ) {
         fun toEpisode(provider: StreamPlayStremioCatelog, type: String?, imdbId: String?): Episode {
             return provider.newEpisode(
@@ -381,7 +381,7 @@ class StreamPlayStremioCatelog(
     }
 
     data class TmdbExternalIds(
-        @JsonProperty("imdb_id") val imdb_id: String?
+        @param:JsonProperty("imdb_id") val imdb_id: String?
     )
 
     suspend fun kitsuToImdb(kitsuId: String): String? {

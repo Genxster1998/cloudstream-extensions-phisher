@@ -143,14 +143,14 @@ class AniworldPlugin: Plugin() {
         val id: Long,
         val code: String,
         val title: String,
-        @JsonProperty("poster_url")
+        @param:JsonProperty("poster_url")
         val posterUrl: String,
         val description: String,
-        @JsonProperty("created_at")
+        @param:JsonProperty("created_at")
         val createdAt: String,
-        @JsonProperty("owner_private")
+        @param:JsonProperty("owner_private")
         val ownerPrivate: Boolean,
-        @JsonProperty("embed_frame_url")
+        @param:JsonProperty("embed_frame_url")
         val embedFrameUrl: String,
     )
 
@@ -162,22 +162,22 @@ class AniworldPlugin: Plugin() {
         val algorithm: String,
         val iv: String,
         val payload: String,
-        @JsonProperty("key_parts")
+        @param:JsonProperty("key_parts")
         val keyParts: List<String>,
-        @JsonProperty("expires_at")
+        @param:JsonProperty("expires_at")
         val expiresAt: String,
-        @JsonProperty("decrypt_keys")
+        @param:JsonProperty("decrypt_keys")
         val decryptKeys: DecryptKeys,
         val iv2: String,
         val payload2: String,
     )
 
     data class DecryptKeys(
-        @JsonProperty("edge_1")
+        @param:JsonProperty("edge_1")
         val edge1: String,
-        @JsonProperty("edge_2")
+        @param:JsonProperty("edge_2")
         val edge2: String,
-        @JsonProperty("legacy_fallback")
+        @param:JsonProperty("legacy_fallback")
         val legacyFallback: String,
     )
 
@@ -188,10 +188,10 @@ class AniworldPlugin: Plugin() {
     data class PlaybackDecryptSource(
         val quality: String,
         val label: String,
-        @JsonProperty("mime_type")
+        @param:JsonProperty("mime_type")
         val mimeType: String,
         val url: String,
-        @JsonProperty("bitrate_kbps")
+        @param:JsonProperty("bitrate_kbps")
         val bitrateKbps: Long,
         val height: Any?,
     )

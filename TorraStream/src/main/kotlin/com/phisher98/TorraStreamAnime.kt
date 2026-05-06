@@ -319,39 +319,39 @@ open class TorraStreamAnime(private val sharedPref: SharedPreferences) : MainAPI
     }
 
     data class AnilistAPIResponse(
-        @JsonProperty("data") val data: AnilistData,
+        @param:JsonProperty("data") val data: AnilistData,
     ) {
         data class AnilistData(
-            @JsonProperty("Page") val page: AnilistPage?,
-            @JsonProperty("Media") val media: anilistMedia?,
+            @param:JsonProperty("Page") val page: AnilistPage?,
+            @param:JsonProperty("Media") val media: anilistMedia?,
         ) {
             data class AnilistPage(
-                @JsonProperty("pageInfo") val pageInfo: LikePageInfo,
-                @JsonProperty("media") val media: List<Media>,
+                @param:JsonProperty("pageInfo") val pageInfo: LikePageInfo,
+                @param:JsonProperty("media") val media: List<Media>,
             )
         }
 
         data class anilistMedia(
-            @JsonProperty("id") val id: Int,
-            @JsonProperty("startDate") val startDate: StartDate,
-            @JsonProperty("episodes") val episodes: Int?,
-            @JsonProperty("title") val title: Title,
-            @JsonProperty("season") val season: String?,
-            @JsonProperty("genres") val genres: List<String>,
-            @JsonProperty("averageScore") val averageScore: Int,
-            @JsonProperty("status") val status: String,
-            @JsonProperty("description") val description: String?,
-            @JsonProperty("coverImage") val coverImage: CoverImage,
-            @JsonProperty("bannerImage") val bannerImage: String?,
-            @JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
-            @JsonProperty("airingSchedule") val airingSchedule: AiringScheduleNodes?,
-            @JsonProperty("recommendations") val recommendations: RecommendationConnection?,
-            @JsonProperty("format") val format: String?,
+            @param:JsonProperty("id") val id: Int,
+            @param:JsonProperty("startDate") val startDate: StartDate,
+            @param:JsonProperty("episodes") val episodes: Int?,
+            @param:JsonProperty("title") val title: Title,
+            @param:JsonProperty("season") val season: String?,
+            @param:JsonProperty("genres") val genres: List<String>,
+            @param:JsonProperty("averageScore") val averageScore: Int,
+            @param:JsonProperty("status") val status: String,
+            @param:JsonProperty("description") val description: String?,
+            @param:JsonProperty("coverImage") val coverImage: CoverImage,
+            @param:JsonProperty("bannerImage") val bannerImage: String?,
+            @param:JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
+            @param:JsonProperty("airingSchedule") val airingSchedule: AiringScheduleNodes?,
+            @param:JsonProperty("recommendations") val recommendations: RecommendationConnection?,
+            @param:JsonProperty("format") val format: String?,
             ) {
-            data class StartDate(@JsonProperty("year") val year: Int)
+            data class StartDate(@param:JsonProperty("year") val year: Int)
 
             data class AiringScheduleNodes(
-                @JsonProperty("nodes") val nodes: List<SeasonNextAiringEpisode>?
+                @param:JsonProperty("nodes") val nodes: List<SeasonNextAiringEpisode>?
             )
 
             fun totalEpisodes(): Int {
@@ -372,46 +372,46 @@ open class TorraStreamAnime(private val sharedPref: SharedPreferences) : MainAPI
     }
 
     data class LinkData(
-        @JsonProperty("simklId") val simklId: Int? = null,
-        @JsonProperty("traktId") val traktId: Int? = null,
-        @JsonProperty("imdbId") val imdbId: String? = null,
-        @JsonProperty("tmdbId") val tmdbId: Int? = null,
-        @JsonProperty("tvdbId") val tvdbId: Int? = null,
-        @JsonProperty("type") val type: String? = null,
-        @JsonProperty("season") val season: Int? = null,
-        @JsonProperty("episode") val episode: Int? = null,
-        @JsonProperty("aniId") val aniId: Int? = null,
-        @JsonProperty("malId") val malId: Int? = null,
-        @JsonProperty("title") val title: String? = null,
-        @JsonProperty("year") val year: Int? = null,
-        @JsonProperty("orgTitle") val orgTitle: String? = null,
-        @JsonProperty("isAnime") val isAnime: Boolean = false,
-        @JsonProperty("airedYear") val airedYear: Int? = null,
-        @JsonProperty("lastSeason") val lastSeason: Int? = null,
-        @JsonProperty("epsTitle") val epsTitle: String? = null,
-        @JsonProperty("jpTitle") val jpTitle: String? = null,
-        @JsonProperty("date") val date: String? = null,
-        @JsonProperty("airedDate") val airedDate: String? = null,
-        @JsonProperty("isAsian") val isAsian: Boolean = false,
-        @JsonProperty("isBollywood") val isBollywood: Boolean = false,
-        @JsonProperty("isCartoon") val isCartoon: Boolean = false,
-        @JsonProperty("isDub") val isDub: Boolean = false,
+        @param:JsonProperty("simklId") val simklId: Int? = null,
+        @param:JsonProperty("traktId") val traktId: Int? = null,
+        @param:JsonProperty("imdbId") val imdbId: String? = null,
+        @param:JsonProperty("tmdbId") val tmdbId: Int? = null,
+        @param:JsonProperty("tvdbId") val tvdbId: Int? = null,
+        @param:JsonProperty("type") val type: String? = null,
+        @param:JsonProperty("season") val season: Int? = null,
+        @param:JsonProperty("episode") val episode: Int? = null,
+        @param:JsonProperty("aniId") val aniId: Int? = null,
+        @param:JsonProperty("malId") val malId: Int? = null,
+        @param:JsonProperty("title") val title: String? = null,
+        @param:JsonProperty("year") val year: Int? = null,
+        @param:JsonProperty("orgTitle") val orgTitle: String? = null,
+        @param:JsonProperty("isAnime") val isAnime: Boolean = false,
+        @param:JsonProperty("airedYear") val airedYear: Int? = null,
+        @param:JsonProperty("lastSeason") val lastSeason: Int? = null,
+        @param:JsonProperty("epsTitle") val epsTitle: String? = null,
+        @param:JsonProperty("jpTitle") val jpTitle: String? = null,
+        @param:JsonProperty("date") val date: String? = null,
+        @param:JsonProperty("airedDate") val airedDate: String? = null,
+        @param:JsonProperty("isAsian") val isAsian: Boolean = false,
+        @param:JsonProperty("isBollywood") val isBollywood: Boolean = false,
+        @param:JsonProperty("isCartoon") val isCartoon: Boolean = false,
+        @param:JsonProperty("isDub") val isDub: Boolean = false,
     )
 
 
     data class Media(
-        @JsonProperty("id") val id: Int,
-        @JsonProperty("idMal") val idMal: Int?,
-        @JsonProperty("season") val season: String?,
-        @JsonProperty("seasonYear") val seasonYear: Int,
-        @JsonProperty("format") val format: String?,
-        @JsonProperty("averageScore") val averageScore: Int,
-        @JsonProperty("episodes") val episodes: Int,
-        @JsonProperty("title") val title: Title,
-        @JsonProperty("description") val description: String?,
-        @JsonProperty("coverImage") val coverImage: CoverImage,
-        @JsonProperty("synonyms") val synonyms: List<String>,
-        @JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
+        @param:JsonProperty("id") val id: Int,
+        @param:JsonProperty("idMal") val idMal: Int?,
+        @param:JsonProperty("season") val season: String?,
+        @param:JsonProperty("seasonYear") val seasonYear: Int,
+        @param:JsonProperty("format") val format: String?,
+        @param:JsonProperty("averageScore") val averageScore: Int,
+        @param:JsonProperty("episodes") val episodes: Int,
+        @param:JsonProperty("title") val title: Title,
+        @param:JsonProperty("description") val description: String?,
+        @param:JsonProperty("coverImage") val coverImage: CoverImage,
+        @param:JsonProperty("synonyms") val synonyms: List<String>,
+        @param:JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
     )
 
     private suspend fun tmdbToAnimeId(title: String?, year: Int?, type: TvType): AniIds {
@@ -471,21 +471,21 @@ open class TorraStreamAnime(private val sharedPref: SharedPreferences) : MainAPI
     data class AniIds(var id: Int? = null, var idMal: Int? = null)
 
     data class AniMedia(
-        @JsonProperty("id") var id: Int? = null,
-        @JsonProperty("idMal") var idMal: Int? = null
+        @param:JsonProperty("id") var id: Int? = null,
+        @param:JsonProperty("idMal") var idMal: Int? = null
     )
 
     data class AniPage(
-        @JsonProperty("media") var media: ArrayList<AniMedia> = arrayListOf()
+        @param:JsonProperty("media") var media: ArrayList<AniMedia> = arrayListOf()
     )
 
     data class AniData(
-        @JsonProperty("Page") var Page: AniPage? = null,
-        @JsonProperty("media") var media: ArrayList<AniMedia>? = null
+        @param:JsonProperty("Page") var Page: AniPage? = null,
+        @param:JsonProperty("media") var media: ArrayList<AniMedia>? = null
     )
 
     data class AniSearch(
-        @JsonProperty("data") var data: AniData? = null
+        @param:JsonProperty("data") var data: AniData? = null
     )
 
     private fun buildApiUrl(sharedPref: SharedPreferences, mainUrl: String): String {

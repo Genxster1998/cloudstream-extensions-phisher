@@ -35,7 +35,7 @@ class Movies4uProvider: BasePlugin() {
         }
 
         data class Domains(
-            @JsonProperty("movies4u")
+            @param:JsonProperty("movies4u")
             val movies4u: String,
         )
     }

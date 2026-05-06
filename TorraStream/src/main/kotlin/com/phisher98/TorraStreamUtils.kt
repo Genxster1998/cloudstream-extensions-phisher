@@ -1,7 +1,6 @@
 package com.phisher98
 
 import android.content.SharedPreferences
-import android.util.Log
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -82,7 +81,7 @@ data class Subtitles(
 data class Subtitle(
     val id: String,
     val url: String,
-    @JsonProperty("SubEncoding")
+    @param:JsonProperty("SubEncoding")
     val subEncoding: String,
     val lang: String,
     val m: String,
@@ -118,40 +117,40 @@ fun parseAnimeData(jsonString: String): MetaAnimeData? {
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class MetaMappings(
-    @JsonProperty("themoviedb_id") val themoviedbId: String? = null,
-    @JsonProperty("thetvdb_id") val thetvdbId: Int? = null,
-    @JsonProperty("imdb_id") val imdbId: String? = null,
-    @JsonProperty("mal_id") val malId: Int? = null,
-    @JsonProperty("anilist_id") val anilistId: Int? = null,
-    @JsonProperty("kitsu_id") val kitsuid: String? = null,
+    @param:JsonProperty("themoviedb_id") val themoviedbId: String? = null,
+    @param:JsonProperty("thetvdb_id") val thetvdbId: Int? = null,
+    @param:JsonProperty("imdb_id") val imdbId: String? = null,
+    @param:JsonProperty("mal_id") val malId: Int? = null,
+    @param:JsonProperty("anilist_id") val anilistId: Int? = null,
+    @param:JsonProperty("kitsu_id") val kitsuid: String? = null,
 )
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class ImageData(
-    @JsonProperty("coverType") val coverType: String?,
-    @JsonProperty("url") val url: String?
+    @param:JsonProperty("coverType") val coverType: String?,
+    @param:JsonProperty("url") val url: String?
 )
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class MetaEpisode(
-    @JsonProperty("episode") val episode: String?,
-    @JsonProperty("airdate") val airdate: String?,
-    @JsonProperty("airDateUtc") val airDateUtc: String?,
-    @JsonProperty("length") val length: Int?,
-    @JsonProperty("runtime") val runtime: Int?,
-    @JsonProperty("image") val image: String?,
-    @JsonProperty("title") val title: Map<String, String>?,
-    @JsonProperty("overview") val overview: String?,
-    @JsonProperty("rating") val rating: String?,
-    @JsonProperty("finaleType") val finaleType: String?
+    @param:JsonProperty("episode") val episode: String?,
+    @param:JsonProperty("airdate") val airdate: String?,
+    @param:JsonProperty("airDateUtc") val airDateUtc: String?,
+    @param:JsonProperty("length") val length: Int?,
+    @param:JsonProperty("runtime") val runtime: Int?,
+    @param:JsonProperty("image") val image: String?,
+    @param:JsonProperty("title") val title: Map<String, String>?,
+    @param:JsonProperty("overview") val overview: String?,
+    @param:JsonProperty("rating") val rating: String?,
+    @param:JsonProperty("finaleType") val finaleType: String?
 )
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class MetaAnimeData(
-    @JsonProperty("titles") val titles: Map<String, String>? = null,
-    @JsonProperty("images") val images: List<ImageData>? = null,
-    @JsonProperty("episodes") val episodes: Map<String, MetaEpisode>? = null,
-    @JsonProperty("mappings") val mappings: MetaMappings? = null
+    @param:JsonProperty("titles") val titles: Map<String, String>? = null,
+    @param:JsonProperty("images") val images: List<ImageData>? = null,
+    @param:JsonProperty("episodes") val episodes: Map<String, MetaEpisode>? = null,
+    @param:JsonProperty("mappings") val mappings: MetaMappings? = null
 )
 
 fun parseStreamsToMagnetLinks(jsonString: String): List<MagnetStream> {

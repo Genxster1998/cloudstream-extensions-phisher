@@ -31,7 +31,7 @@ data class ResponseData(
         val id: String? = null,
         val type: String? = null,
         val name: String? = null,
-        @JsonProperty("imdb_id")
+        @param:JsonProperty("imdb_id")
         val imdbId: String? = null,
 
         val slug: String? = null,
@@ -49,7 +49,7 @@ data class ResponseData(
         val imdbRating: String? = null,
         val genres: List<String>? = null,
         val poster: String? = null,
-        @JsonProperty("_rawPosterUrl")
+        @param:JsonProperty("_rawPosterUrl")
         val rawPosterUrl: String? = null,
 
         val background: String? = null,

@@ -145,8 +145,8 @@ data class AnimekaiTrack(
 )
 
 data class AnimeKaiResponse(
-    @JsonProperty("status") val status: Boolean,
-    @JsonProperty("result") val result: String
+    @param:JsonProperty("status") val status: Boolean,
+    @param:JsonProperty("result") val result: String
 ) {
     fun getDocument(): Document {
         return Jsoup.parse(result)

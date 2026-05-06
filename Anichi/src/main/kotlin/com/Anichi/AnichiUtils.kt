@@ -246,55 +246,55 @@ suspend fun anilistAPICall(query: String): AnilistAPIResponse {
 }
 
 data class AnilistAPIResponse(
-    @JsonProperty("data") val data: AnilistData,
+    @param:JsonProperty("data") val data: AnilistData,
 ) {
     data class AnilistData(
-        @JsonProperty("Page") val page: AnilistPage?,
-        @JsonProperty("Media") val media: anilistMedia?,
+        @param:JsonProperty("Page") val page: AnilistPage?,
+        @param:JsonProperty("Media") val media: anilistMedia?,
     ) {
         data class AnilistPage(
-            @JsonProperty("pageInfo") val pageInfo: LikePageInfo,
-            @JsonProperty("media") val media: List<Media>,
+            @param:JsonProperty("pageInfo") val pageInfo: LikePageInfo,
+            @param:JsonProperty("media") val media: List<Media>,
         )
     }
 
     data class anilistMedia(
-        @JsonProperty("id") val id: Int,
-        @JsonProperty("startDate") val startDate: StartDate,
-        @JsonProperty("episodes") val episodes: Int?,
-        @JsonProperty("title") val title: Title,
-        @JsonProperty("season") val season: String?,
-        @JsonProperty("genres") val genres: List<String>,
-        @JsonProperty("averageScore") val averageScore: Int,
-        @JsonProperty("status") val status: String,
-        @JsonProperty("description") val description: String?,
-        @JsonProperty("coverImage") val coverImage: CoverImage,
-        @JsonProperty("bannerImage") val bannerImage: String?,
-        @JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
-        @JsonProperty("airingSchedule") val airingSchedule: AiringScheduleNodes?,
-        @JsonProperty("recommendations") val recommendations: RecommendationConnection?,
-        @JsonProperty("format") val format: String?,
+        @param:JsonProperty("id") val id: Int,
+        @param:JsonProperty("startDate") val startDate: StartDate,
+        @param:JsonProperty("episodes") val episodes: Int?,
+        @param:JsonProperty("title") val title: Title,
+        @param:JsonProperty("season") val season: String?,
+        @param:JsonProperty("genres") val genres: List<String>,
+        @param:JsonProperty("averageScore") val averageScore: Int,
+        @param:JsonProperty("status") val status: String,
+        @param:JsonProperty("description") val description: String?,
+        @param:JsonProperty("coverImage") val coverImage: CoverImage,
+        @param:JsonProperty("bannerImage") val bannerImage: String?,
+        @param:JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
+        @param:JsonProperty("airingSchedule") val airingSchedule: AiringScheduleNodes?,
+        @param:JsonProperty("recommendations") val recommendations: RecommendationConnection?,
+        @param:JsonProperty("format") val format: String?,
     ) {
-        data class StartDate(@JsonProperty("year") val year: Int)
+        data class StartDate(@param:JsonProperty("year") val year: Int)
 
         data class AiringScheduleNodes(
-            @JsonProperty("nodes") val nodes: List<SeasonNextAiringEpisode>?
+            @param:JsonProperty("nodes") val nodes: List<SeasonNextAiringEpisode>?
         )
     }
 
     data class Media(
-        @JsonProperty("id") val id: Int,
-        @JsonProperty("idMal") val idMal: Int?,
-        @JsonProperty("season") val season: String?,
-        @JsonProperty("seasonYear") val seasonYear: Int,
-        @JsonProperty("format") val format: String?,
-        @JsonProperty("averageScore") val averageScore: Int,
-        @JsonProperty("episodes") val episodes: Int,
-        @JsonProperty("title") val title: Title,
-        @JsonProperty("description") val description: String?,
-        @JsonProperty("coverImage") val coverImage: CoverImage,
-        @JsonProperty("synonyms") val synonyms: List<String>,
-        @JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
+        @param:JsonProperty("id") val id: Int,
+        @param:JsonProperty("idMal") val idMal: Int?,
+        @param:JsonProperty("season") val season: String?,
+        @param:JsonProperty("seasonYear") val seasonYear: Int,
+        @param:JsonProperty("format") val format: String?,
+        @param:JsonProperty("averageScore") val averageScore: Int,
+        @param:JsonProperty("episodes") val episodes: Int,
+        @param:JsonProperty("title") val title: Title,
+        @param:JsonProperty("description") val description: String?,
+        @param:JsonProperty("coverImage") val coverImage: CoverImage,
+        @param:JsonProperty("synonyms") val synonyms: List<String>,
+        @param:JsonProperty("nextAiringEpisode") val nextAiringEpisode: SeasonNextAiringEpisode?,
     )
 }
 

@@ -37,7 +37,7 @@ class BanglaPlexProvider: BasePlugin() {
         }
 
         data class Domains(
-            @JsonProperty("banglaplex")
+            @param:JsonProperty("banglaplex")
             val banglaplex: String,
         )
     }

@@ -88,8 +88,8 @@ class Streamplay : ExtractorApi() {
     }
 
     data class Source(
-        @JsonProperty("file") val file: String? = null,
-        @JsonProperty("label") val label: String? = null,
+        @param:JsonProperty("file") val file: String? = null,
+        @param:JsonProperty("label") val label: String? = null,
     )
 
 }

@@ -165,18 +165,18 @@ class AllWish : MainAPI() {
     }
 
     data class APIResponse(
-        @JsonProperty("status") val status: Int? = null,
-        @JsonProperty("result") val result: String? = null,
+        @param:JsonProperty("status") val status: Int? = null,
+        @param:JsonProperty("result") val result: String? = null,
         val html: Document = Jsoup.parse(result ?: "")
     )
 
     data class APIResponseUrl(
-        @JsonProperty("status") val status: Int? = null,
-        @JsonProperty("result") val result: ServerUrl? = null,
+        @param:JsonProperty("status") val status: Int? = null,
+        @param:JsonProperty("result") val result: ServerUrl? = null,
     )
 
     data class ServerUrl(
-        @JsonProperty("url") val url: String? = null,
+        @param:JsonProperty("url") val url: String? = null,
     )
 
     private fun createEpisode(

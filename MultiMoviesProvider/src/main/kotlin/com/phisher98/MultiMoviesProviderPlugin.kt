@@ -56,7 +56,7 @@ class MultiMoviesProviderPlugin: BasePlugin() {
         }
 
         data class Domains(
-            @JsonProperty("MultiMovies")
+            @param:JsonProperty("MultiMovies")
             val MultiMovies: String,
         )
     }

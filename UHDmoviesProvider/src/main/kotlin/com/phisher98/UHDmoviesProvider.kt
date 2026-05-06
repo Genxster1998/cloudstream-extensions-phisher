@@ -99,8 +99,8 @@ class UHDmoviesProvider : MainAPI() { // all providers must be an instance of Ma
     }
 
     data class UHDLinks(
-        @JsonProperty("sourceName") val sourceName: String,
-        @JsonProperty("sourceLink") val sourceLink: String
+        @param:JsonProperty("sourceName") val sourceName: String,
+        @param:JsonProperty("sourceLink") val sourceLink: String
     )
 
     override suspend fun load(url: String): LoadResponse {

@@ -186,9 +186,9 @@ class Animesalt : MainAPI() {
 
     data class Data(
         val content: String,
-        @JsonProperty("has_more")
+        @param:JsonProperty("has_more")
         val hasMore: Boolean,
-        @JsonProperty("max_pages")
+        @param:JsonProperty("max_pages")
         val maxPages: Long,
     ) {
         fun asJsoup(): Document {

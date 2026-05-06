@@ -419,7 +419,7 @@ val json = """
     )
 
     data class SearchResult(
-        @JsonProperty("episode_count")
+        @param:JsonProperty("episode_count")
         val episodeCount: Long,
         val genres: List<String>,
         val locales: List<String>,
@@ -427,18 +427,18 @@ val json = """
         val status: String,
         val synopsis: String,
         val title: String,
-        @JsonProperty("title_en")
+        @param:JsonProperty("title_en")
         val titleEn: String?,
         val type: String,
         val year: Long,
         val poster: SearchPoster,
-        @JsonProperty("episode_duration")
+        @param:JsonProperty("episode_duration")
         val episodeDuration: Long,
-        @JsonProperty("watch_uri")
+        @param:JsonProperty("watch_uri")
         val watchUri: String?,
-        @JsonProperty("episode_number")
+        @param:JsonProperty("episode_number")
         val episodeNumber: Long?,
-        @JsonProperty("episode_string")
+        @param:JsonProperty("episode_string")
         val episodeString: String?,
     )
 
@@ -453,14 +453,14 @@ val json = """
 
     //Trending
 data class ResponseHome(
-    @JsonProperty("page_count")
+    @param:JsonProperty("page_count")
     val pageCount: Long,
     val result: List<Result>,
 )
 
 data class Result(
     val title: String,
-    @JsonProperty("title_en")
+    @param:JsonProperty("title_en")
     val titleEn: String?,
     val synopsis: String,
     val status: String,

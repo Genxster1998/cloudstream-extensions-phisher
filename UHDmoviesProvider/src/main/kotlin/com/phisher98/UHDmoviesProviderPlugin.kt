@@ -35,7 +35,7 @@ class UHDmoviesProviderPlugin: BasePlugin() {
         }
 
         data class Domains(
-            @JsonProperty("UHDMovies")
+            @param:JsonProperty("UHDMovies")
             val UHDMovies: String,
         )
     }

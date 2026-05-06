@@ -227,36 +227,36 @@ class Simkl(val plugin: UltimaPlugin) : MainAPI() {
     }
 
     open class SimklMediaObject(
-        @JsonProperty("title") val title: String,
-        @JsonProperty("year") val year: Int? = null,
-        @JsonProperty("ids") val ids: SimklIds?,
-        @JsonProperty("total_episodes") val total_episodes: Int? = null,
-        @JsonProperty("status") val status: String? = null,
-        @JsonProperty("poster") val poster: String? = null,
-        @JsonProperty("type") val type: String? = null,
-        @JsonProperty("overview") val overview: String? = null,
-        @JsonProperty("genres") val genres: List<String>? = null,
-        @JsonProperty("users_recommendations")
+        @param:JsonProperty("title") val title: String,
+        @param:JsonProperty("year") val year: Int? = null,
+        @param:JsonProperty("ids") val ids: SimklIds?,
+        @param:JsonProperty("total_episodes") val total_episodes: Int? = null,
+        @param:JsonProperty("status") val status: String? = null,
+        @param:JsonProperty("poster") val poster: String? = null,
+        @param:JsonProperty("type") val type: String? = null,
+        @param:JsonProperty("overview") val overview: String? = null,
+        @param:JsonProperty("genres") val genres: List<String>? = null,
+        @param:JsonProperty("users_recommendations")
         val recommendations: List<SimklMediaObject>? = null,
     )
 
     open class SimklEpisodeObject(
-        @JsonProperty("title") val title: String? = null,
-        @JsonProperty("description") val desc: String? = null,
-        @JsonProperty("season") val season: Int? = null,
-        @JsonProperty("episode") val episode: Int? = null,
-        @JsonProperty("type") val type: String? = null,
-        @JsonProperty("aired") val aired: Boolean? = null,
-        @JsonProperty("img") val img: String? = null,
-        @JsonProperty("ids") val ids: SimklIds?,
+        @param:JsonProperty("title") val title: String? = null,
+        @param:JsonProperty("description") val desc: String? = null,
+        @param:JsonProperty("season") val season: Int? = null,
+        @param:JsonProperty("episode") val episode: Int? = null,
+        @param:JsonProperty("type") val type: String? = null,
+        @param:JsonProperty("aired") val aired: Boolean? = null,
+        @param:JsonProperty("img") val img: String? = null,
+        @param:JsonProperty("ids") val ids: SimklIds?,
     )
 
     data class SimklIds(
-        @JsonProperty("simkl") val simkl: Int? = null,
-        @JsonProperty("simkl_id") val simkl2: Int? = null,
-        @JsonProperty("imdb") val imdb: String? = null,
-        @JsonProperty("tmdb") val tmdb: Int? = null,
-        @JsonProperty("mal") val mal: String? = null,
-        @JsonProperty("anilist") val anilist: String? = null,
+        @param:JsonProperty("simkl") val simkl: Int? = null,
+        @param:JsonProperty("simkl_id") val simkl2: Int? = null,
+        @param:JsonProperty("imdb") val imdb: String? = null,
+        @param:JsonProperty("tmdb") val tmdb: Int? = null,
+        @param:JsonProperty("mal") val mal: String? = null,
+        @param:JsonProperty("anilist") val anilist: String? = null,
     )
 }

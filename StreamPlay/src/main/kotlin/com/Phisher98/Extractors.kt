@@ -221,8 +221,8 @@ open class Playm4u : ExtractorApi() {
     }
 
     data class Source(
-        @JsonProperty("data") val data: String? = null,
-        @JsonProperty("sub") val sub: String? = null,
+        @param:JsonProperty("data") val data: String? = null,
+        @param:JsonProperty("sub") val sub: String? = null,
     )
 
 }
@@ -272,7 +272,7 @@ open class M4ufree : ExtractorApi() {
     }
 
     data class Source(
-        @JsonProperty("data") val data: String? = null,
+        @param:JsonProperty("data") val data: String? = null,
     )
 
 }
@@ -1803,8 +1803,8 @@ open class MegaUp : ExtractorApi() {
       }
 
     data class AnimeKaiResponse(
-        @JsonProperty("status") val status: Int,
-        @JsonProperty("result") val result: String
+        @param:JsonProperty("status") val status: Int,
+        @param:JsonProperty("result") val result: String
     )
 }
 
@@ -2523,7 +2523,7 @@ internal class Akirabox : ExtractorApi() {
     }
 
     data class AkiraboxRes(
-        @JsonProperty("download_link")
+        @param:JsonProperty("download_link")
         val downloadLink: String,
     )
 
@@ -2789,8 +2789,8 @@ open class Rapidshare : ExtractorApi() {
     }
 
     data class YflixResponse(
-        @JsonProperty("status") val status: Int,
-        @JsonProperty("result") val result: String
+        @param:JsonProperty("status") val status: Int,
+        @param:JsonProperty("result") val result: String
     )
 
 }

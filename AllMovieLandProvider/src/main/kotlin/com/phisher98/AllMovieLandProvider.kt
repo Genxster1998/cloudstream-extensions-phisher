@@ -291,62 +291,62 @@ class AllMovieLandProvider : MainAPI() { // all providers must be an instance of
     }
 
     data class Getfile (
-        @JsonProperty("file"       ) var file       : String,
-        @JsonProperty("hls"        ) var hls        : Int?   ,
-        @JsonProperty("id"         ) var id         : String?,
-        @JsonProperty("cuid"       ) var cuid       : String?,
-        @JsonProperty("key"        ) var key        : String?,
-        @JsonProperty("movie"      ) var movie      : String?,
-        @JsonProperty("host"       ) var host       : String?,
-        @JsonProperty("masterId"   ) var masterId   : String?,
-        @JsonProperty("masterHash" ) var masterHash : String?,
-        @JsonProperty("userIp"     ) var userIp     : String?,
-        @JsonProperty("poster"     ) var poster     : String?,
-        @JsonProperty("href"       ) var href       : String,
-        @JsonProperty("p2p"        ) var p2p        : Boolean?,
-        @JsonProperty("rek"        ) var rek        : Any?,
-        @JsonProperty("autoplay"   ) var autoplay   : Int?   ,
-        @JsonProperty("domain"     ) var domain     : Any?,
-        @JsonProperty("kp"         ) var kp         : String?,
+        @param:JsonProperty("file"       ) var file       : String,
+        @param:JsonProperty("hls"        ) var hls        : Int?   ,
+        @param:JsonProperty("id"         ) var id         : String?,
+        @param:JsonProperty("cuid"       ) var cuid       : String?,
+        @param:JsonProperty("key"        ) var key        : String?,
+        @param:JsonProperty("movie"      ) var movie      : String?,
+        @param:JsonProperty("host"       ) var host       : String?,
+        @param:JsonProperty("masterId"   ) var masterId   : String?,
+        @param:JsonProperty("masterHash" ) var masterHash : String?,
+        @param:JsonProperty("userIp"     ) var userIp     : String?,
+        @param:JsonProperty("poster"     ) var poster     : String?,
+        @param:JsonProperty("href"       ) var href       : String,
+        @param:JsonProperty("p2p"        ) var p2p        : Boolean?,
+        @param:JsonProperty("rek"        ) var rek        : Any?,
+        @param:JsonProperty("autoplay"   ) var autoplay   : Int?   ,
+        @param:JsonProperty("domain"     ) var domain     : Any?,
+        @param:JsonProperty("kp"         ) var kp         : String?,
     )
 
     data class Extract (
-        @JsonProperty("title" ) var title : String?,
-        @JsonProperty("id"    ) var id    : String?,
-        @JsonProperty("file"  ) var file  : String?
+        @param:JsonProperty("title" ) var title : String?,
+        @param:JsonProperty("id"    ) var id    : String?,
+        @param:JsonProperty("file"  ) var file  : String?
     )
 
     data class Seasons (
-        @JsonProperty("title"  ) var title  : String?,
-        @JsonProperty("id"     ) var id     : String,
-        @JsonProperty("folder" ) var folder : List<Episodes> = listOf()
+        @param:JsonProperty("title"  ) var title  : String?,
+        @param:JsonProperty("id"     ) var id     : String,
+        @param:JsonProperty("folder" ) var folder : List<Episodes> = listOf()
     )
 
     data class Episodes (
-        @JsonProperty("episode" ) var episode : String,
-        @JsonProperty("title"   ) var title   : String?,
-        @JsonProperty("id"      ) var id      : String?,
-        @JsonProperty("folder"  ) var folder  : List<Files> = listOf()
+        @param:JsonProperty("episode" ) var episode : String,
+        @param:JsonProperty("title"   ) var title   : String?,
+        @param:JsonProperty("id"      ) var id      : String?,
+        @param:JsonProperty("folder"  ) var folder  : List<Files> = listOf()
     )
 
     data class Files (
-        @JsonProperty("file"    ) var file   : String,
-        @JsonProperty("end_tag" ) var endTag : String?,
-        @JsonProperty("title"   ) var title  : String?,
-        @JsonProperty("id"      ) var id     : String?
+        @param:JsonProperty("file"    ) var file   : String,
+        @param:JsonProperty("end_tag" ) var endTag : String?,
+        @param:JsonProperty("title"   ) var title  : String?,
+        @param:JsonProperty("id"      ) var id     : String?
     )
 
     data class StreamPayload(
-        @JsonProperty("playerDomain") val playerDomain: String,
-        @JsonProperty("tokenKey") val tokenKey: String,
-        @JsonProperty("links") val items: List<Extract>,
-        @JsonProperty("raw") val raw: String = items.toJson(),
+        @param:JsonProperty("playerDomain") val playerDomain: String,
+        @param:JsonProperty("tokenKey") val tokenKey: String,
+        @param:JsonProperty("links") val items: List<Extract>,
+        @param:JsonProperty("raw") val raw: String = items.toJson(),
     )
 
     data class EpisodePayload(
-        @JsonProperty("playerDomain") val playerDomain: String,
-        @JsonProperty("tokenKey") val tokenKey: String,
-        @JsonProperty("links") val links: List<Extract>,
+        @param:JsonProperty("playerDomain") val playerDomain: String,
+        @param:JsonProperty("tokenKey") val tokenKey: String,
+        @param:JsonProperty("links") val links: List<Extract>,
     )
 
     override suspend fun loadLinks(

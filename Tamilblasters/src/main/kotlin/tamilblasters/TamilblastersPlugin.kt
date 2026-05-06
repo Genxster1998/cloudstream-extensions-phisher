@@ -33,7 +33,7 @@ class TamilblastersPlugin: Plugin() {
         }
 
         data class Domains(
-            @JsonProperty("tamilblasters")
+            @param:JsonProperty("tamilblasters")
             val tamilblasters: String,
         )
     }

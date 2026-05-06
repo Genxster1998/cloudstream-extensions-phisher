@@ -27,7 +27,7 @@ data class PageInfo(
 )
 
 data class Edge(
-    @JsonProperty("_id")
+    @param:JsonProperty("_id")
     val id: String,
     val name: String,
     val englishName: String,
@@ -69,38 +69,38 @@ data class TmdbDate(
 )
 
 data class MoflixResponse(
-    @JsonProperty("title") val title: Episode? = null,
-    @JsonProperty("episode") val episode: Episode? = null,
+    @param:JsonProperty("title") val title: Episode? = null,
+    @param:JsonProperty("episode") val episode: Episode? = null,
 ) {
     data class Episode(
-        @JsonProperty("id") val id: Int? = null,
-        @JsonProperty("videos") val videos: ArrayList<Videos>? = arrayListOf(),
+        @param:JsonProperty("id") val id: Int? = null,
+        @param:JsonProperty("videos") val videos: ArrayList<Videos>? = arrayListOf(),
     ) {
         data class Videos(
-            @JsonProperty("name") val name: String? = null,
-            @JsonProperty("category") val category: String? = null,
-            @JsonProperty("src") val src: String? = null,
-            @JsonProperty("quality") val quality: String? = null,
+            @param:JsonProperty("name") val name: String? = null,
+            @param:JsonProperty("category") val category: String? = null,
+            @param:JsonProperty("src") val src: String? = null,
+            @param:JsonProperty("quality") val quality: String? = null,
         )
     }
 }
 
 data class AniMedia(
-    @JsonProperty("id") var id: Int? = null,
-    @JsonProperty("idMal") var idMal: Int? = null
+    @param:JsonProperty("id") var id: Int? = null,
+    @param:JsonProperty("idMal") var idMal: Int? = null
 )
 
 data class AniPage(
-    @JsonProperty("media") var media: ArrayList<AniMedia> = arrayListOf()
+    @param:JsonProperty("media") var media: ArrayList<AniMedia> = arrayListOf()
 )
 
 data class AniData(
-    @JsonProperty("Page") var Page: AniPage? = null,
-    @JsonProperty("media") var media: ArrayList<AniMedia>? = null
+    @param:JsonProperty("Page") var Page: AniPage? = null,
+    @param:JsonProperty("media") var media: ArrayList<AniMedia>? = null
 )
 
 data class AniSearch(
-    @JsonProperty("data") var data: AniData? = null
+    @param:JsonProperty("data") var data: AniData? = null
 )
 
 
@@ -118,89 +118,89 @@ data class WyZIESUB(
 )
 
 data class ResponseHash(
-    @JsonProperty("embed_url") val embed_url: String,
-    @JsonProperty("key") val key: String? = null,
-    @JsonProperty("type") val type: String? = null,
+    @param:JsonProperty("embed_url") val embed_url: String,
+    @param:JsonProperty("key") val key: String? = null,
+    @param:JsonProperty("type") val type: String? = null,
 )
 
 data class KisskhSources(
-    @JsonProperty("Video") val video: String?,
-    @JsonProperty("ThirdParty") val thirdParty: String?,
+    @param:JsonProperty("Video") val video: String?,
+    @param:JsonProperty("ThirdParty") val thirdParty: String?,
 )
 
 data class KisskhSubtitle(
-    @JsonProperty("src") val src: String?,
-    @JsonProperty("label") val label: String?,
+    @param:JsonProperty("src") val src: String?,
+    @param:JsonProperty("label") val label: String?,
 )
 
 data class KisskhEpisodes(
-    @JsonProperty("id") val id: Int?,
-    @JsonProperty("number") val number: Int?,
+    @param:JsonProperty("id") val id: Int?,
+    @param:JsonProperty("number") val number: Int?,
 )
 
 data class KisskhDetail(
-    @JsonProperty("episodes") val episodes: ArrayList<KisskhEpisodes>? = arrayListOf(),
+    @param:JsonProperty("episodes") val episodes: ArrayList<KisskhEpisodes>? = arrayListOf(),
 )
 
 data class KisskhResults(
-    @JsonProperty("id") val id: Int?,
-    @JsonProperty("title") val title: String?,
+    @param:JsonProperty("id") val id: Int?,
+    @param:JsonProperty("title") val title: String?,
 )
 
 data class ZShowEmbed(
-    @JsonProperty("m") val meta: String? = null,
+    @param:JsonProperty("m") val meta: String? = null,
 )
 
 data class WatchsomuchTorrents(
-    @JsonProperty("id") val id: Int? = null,
-    @JsonProperty("movieId") val movieId: Int? = null,
-    @JsonProperty("season") val season: Int? = null,
-    @JsonProperty("episode") val episode: Int? = null,
+    @param:JsonProperty("id") val id: Int? = null,
+    @param:JsonProperty("movieId") val movieId: Int? = null,
+    @param:JsonProperty("season") val season: Int? = null,
+    @param:JsonProperty("episode") val episode: Int? = null,
 )
 
 data class WatchsomuchMovies(
-    @JsonProperty("torrents") val torrents: ArrayList<WatchsomuchTorrents>? = arrayListOf(),
+    @param:JsonProperty("torrents") val torrents: ArrayList<WatchsomuchTorrents>? = arrayListOf(),
 )
 
 data class WatchsomuchResponses(
-    @JsonProperty("movie") val movie: WatchsomuchMovies? = null,
+    @param:JsonProperty("movie") val movie: WatchsomuchMovies? = null,
 )
 
 data class WatchsomuchSubtitles(
-    @JsonProperty("url") val url: String? = null,
-    @JsonProperty("label") val label: String? = null,
+    @param:JsonProperty("url") val url: String? = null,
+    @param:JsonProperty("label") val label: String? = null,
 )
 
 data class WatchsomuchSubResponses(
-    @JsonProperty("subtitles") val subtitles: ArrayList<WatchsomuchSubtitles>? = arrayListOf(),
+    @param:JsonProperty("subtitles") val subtitles: ArrayList<WatchsomuchSubtitles>? = arrayListOf(),
 )
 
 data class IndexMedia(
-    @JsonProperty("id") val id: String? = null,
-    @JsonProperty("driveId") val driveId: String? = null,
-    @JsonProperty("mimeType") val mimeType: String? = null,
-    @JsonProperty("size") val size: String? = null,
-    @JsonProperty("name") val name: String? = null,
-    @JsonProperty("modifiedTime") val modifiedTime: String? = null,
+    @param:JsonProperty("id") val id: String? = null,
+    @param:JsonProperty("driveId") val driveId: String? = null,
+    @param:JsonProperty("mimeType") val mimeType: String? = null,
+    @param:JsonProperty("size") val size: String? = null,
+    @param:JsonProperty("name") val name: String? = null,
+    @param:JsonProperty("modifiedTime") val modifiedTime: String? = null,
 )
 
 data class IndexData(
-    @JsonProperty("files") val files: ArrayList<IndexMedia>? = arrayListOf(),
+    @param:JsonProperty("files") val files: ArrayList<IndexMedia>? = arrayListOf(),
 )
 
 data class JikanExternal(
-    @JsonProperty("name") val name: String? = null,
-    @JsonProperty("url") val url: String? = null,
+    @param:JsonProperty("name") val name: String? = null,
+    @param:JsonProperty("url") val url: String? = null,
 )
 
 data class JikanData(
-    @JsonProperty("title") val title: String? = null,
-    @JsonProperty("external") val external: List<JikanExternal>? = null,
-    @JsonProperty("season") val season: String? = null,
+    @param:JsonProperty("title") val title: String? = null,
+    @param:JsonProperty("external") val external: List<JikanExternal>? = null,
+    @param:JsonProperty("season") val season: String? = null,
 )
 
 data class JikanResponse(
-    @JsonProperty("data") val data: JikanData? = null,
+    @param:JsonProperty("data") val data: JikanData? = null,
 )
 
 //Hianime
@@ -218,15 +218,15 @@ data class EpisodeServers(
 
 data class animepahe(
     val total: Long,
-    @JsonProperty("per_page")
+    @param:JsonProperty("per_page")
     val perPage: Long,
-    @JsonProperty("current_page")
+    @param:JsonProperty("current_page")
     val currentPage: Long,
-    @JsonProperty("last_page")
+    @param:JsonProperty("last_page")
     val lastPage: Long,
-    @JsonProperty("next_page_url")
+    @param:JsonProperty("next_page_url")
     val nextPageUrl: Any?,
-    @JsonProperty("prev_page_url")
+    @param:JsonProperty("prev_page_url")
     val prevPageUrl: Any?,
     val from: Long,
     val to: Long,
@@ -235,7 +235,7 @@ data class animepahe(
 
 data class Daum(
     val id: Long,
-    @JsonProperty("anime_id")
+    @param:JsonProperty("anime_id")
     val animeId: Long,
     val episode: Int,
     val episode2: Long,
@@ -247,153 +247,153 @@ data class Daum(
     val duration: String,
     val session: String,
     val filler: Long,
-    @JsonProperty("created_at")
+    @param:JsonProperty("created_at")
     val createdAt: String,
 )
 
 
 data class MALSyncSites(
-    @JsonProperty("AniXL") val AniXL: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
-    @JsonProperty("Zoro") val zoro: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
-    @JsonProperty("9anime") val nineAnime: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
-    @JsonProperty("animepahe") val animepahe: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
-    @JsonProperty("KickAssAnime") val KickAssAnime: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
-    @JsonProperty("AnimeKAI") val AnimeKAI: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
+    @param:JsonProperty("AniXL") val AniXL: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
+    @param:JsonProperty("Zoro") val zoro: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
+    @param:JsonProperty("9anime") val nineAnime: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
+    @param:JsonProperty("animepahe") val animepahe: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
+    @param:JsonProperty("KickAssAnime") val KickAssAnime: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
+    @param:JsonProperty("AnimeKAI") val AnimeKAI: HashMap<String?, HashMap<String, String?>>? = hashMapOf(),
 )
 data class MALSyncResponses(
-    @JsonProperty("Sites") val sites: MALSyncSites? = null,
+    @param:JsonProperty("Sites") val sites: MALSyncSites? = null,
 )
 
 data class HianimeResponses(
-    @JsonProperty("html") val html: String? = null,
-    @JsonProperty("link") val link: String? = null,
+    @param:JsonProperty("html") val html: String? = null,
+    @param:JsonProperty("link") val link: String? = null,
 )
 
 data class AllMovielandEpisodeFolder(
-    @JsonProperty("title") val title: String? = null,
-    @JsonProperty("id") val id: String? = null,
-    @JsonProperty("file") val file: String? = null,
+    @param:JsonProperty("title") val title: String? = null,
+    @param:JsonProperty("id") val id: String? = null,
+    @param:JsonProperty("file") val file: String? = null,
 )
 
 data class AllMovielandSeasonFolder(
-    @JsonProperty("episode") val episode: String? = null,
-    @JsonProperty("id") val id: String? = null,
-    @JsonProperty("folder") val folder: ArrayList<AllMovielandEpisodeFolder>? = arrayListOf(),
+    @param:JsonProperty("episode") val episode: String? = null,
+    @param:JsonProperty("id") val id: String? = null,
+    @param:JsonProperty("folder") val folder: ArrayList<AllMovielandEpisodeFolder>? = arrayListOf(),
 )
 
 data class AllMovielandServer(
-    @JsonProperty("title") val title: String? = null,
-    @JsonProperty("id") val id: String? = null,
-    @JsonProperty("file") val file: String? = null,
-    @JsonProperty("folder") val folder: ArrayList<AllMovielandSeasonFolder>? = arrayListOf(),
+    @param:JsonProperty("title") val title: String? = null,
+    @param:JsonProperty("id") val id: String? = null,
+    @param:JsonProperty("file") val file: String? = null,
+    @param:JsonProperty("folder") val folder: ArrayList<AllMovielandSeasonFolder>? = arrayListOf(),
 )
 
 data class AllMovielandPlaylist(
-    @JsonProperty("file") val file: String? = null,
-    @JsonProperty("key") val key: String? = null,
-    @JsonProperty("href") val href: String? = null,
+    @param:JsonProperty("file") val file: String? = null,
+    @param:JsonProperty("key") val key: String? = null,
+    @param:JsonProperty("href") val href: String? = null,
 )
 
 data class ShowflixResultsMovies(
-    @JsonProperty("objectId")
+    @param:JsonProperty("objectId")
     val objectId: String? = null,
-    @JsonProperty("name")
+    @param:JsonProperty("name")
     val name: String? = null,
-    @JsonProperty("releaseYear")
+    @param:JsonProperty("releaseYear")
     val releaseYear: Int? = null,
-    @JsonProperty("tmdbId")
+    @param:JsonProperty("tmdbId")
     val tmdbId: Int? = null,
-    @JsonProperty("embedLinks")
+    @param:JsonProperty("embedLinks")
     val embedLinks: Map<String, String>? = null,
-    @JsonProperty("languages")
+    @param:JsonProperty("languages")
     val languages: List<String>? = null,
-    @JsonProperty("genres")
+    @param:JsonProperty("genres")
     val genres: List<String>? = null,
-    @JsonProperty("backdropURL")
+    @param:JsonProperty("backdropURL")
     val backdropURL: String? = null,
-    @JsonProperty("posterURL")
+    @param:JsonProperty("posterURL")
     val posterURL: String? = null,
-    @JsonProperty("hdLink")
+    @param:JsonProperty("hdLink")
     val hdLink: String? = null,
-    @JsonProperty("hubCloudLink")
+    @param:JsonProperty("hubCloudLink")
     val hubCloudLink: String? = null,
-    @JsonProperty("storyline")
+    @param:JsonProperty("storyline")
     val storyline: String? = null,
-    @JsonProperty("rating")
+    @param:JsonProperty("rating")
     val rating: String? = null,
-    @JsonProperty("createdAt")
+    @param:JsonProperty("createdAt")
     val createdAt: String? = null,
-    @JsonProperty("updatedAt")
+    @param:JsonProperty("updatedAt")
     val updatedAt: String? = null
 )
 
 data class ShowflixResultsSeries(
-    @JsonProperty("objectId")
+    @param:JsonProperty("objectId")
     val objectId: String? = null,
-    @JsonProperty("seriesName")
+    @param:JsonProperty("seriesName")
     val seriesName: String? = null,
-    @JsonProperty("releaseYear")
+    @param:JsonProperty("releaseYear")
     val releaseYear: Int? = null,
-    @JsonProperty("tmdbId")
+    @param:JsonProperty("tmdbId")
     val tmdbId: Int? = null,
-    @JsonProperty("streamwish")
+    @param:JsonProperty("streamwish")
     val streamwish: Map<String, List<String>>? = null,
-    @JsonProperty("filelions")
+    @param:JsonProperty("filelions")
     val filelions: Map<String, List<String>>? = null,
-    @JsonProperty("streamruby")
+    @param:JsonProperty("streamruby")
     val streamruby: Map<String, List<String>>? = null,
-    @JsonProperty("languages")
+    @param:JsonProperty("languages")
     val languages: List<String>? = null,
-    @JsonProperty("genres")
+    @param:JsonProperty("genres")
     val genres: List<String>? = null,
-    @JsonProperty("backdropURL")
+    @param:JsonProperty("backdropURL")
     val backdropURL: String? = null,
-    @JsonProperty("posterURL")
+    @param:JsonProperty("posterURL")
     val posterURL: String? = null,
-    @JsonProperty("hdLink")
+    @param:JsonProperty("hdLink")
     val hdLink: String? = null,
-    @JsonProperty("hubCloudLink")
+    @param:JsonProperty("hubCloudLink")
     val hubCloudLink: String? = null,
-    @JsonProperty("storyline")
+    @param:JsonProperty("storyline")
     val storyline: String? = null,
-    @JsonProperty("rating")
+    @param:JsonProperty("rating")
     val rating: String? = null,
-    @JsonProperty("createdAt")
+    @param:JsonProperty("createdAt")
     val createdAt: String? = null,
-    @JsonProperty("updatedAt")
+    @param:JsonProperty("updatedAt")
     val updatedAt: String? = null
 )
 
 data class RidoContentable(
-    @JsonProperty("imdbId") var imdbId: String? = null,
-    @JsonProperty("tmdbId") var tmdbId: Int? = null,
+    @param:JsonProperty("imdbId") var imdbId: String? = null,
+    @param:JsonProperty("tmdbId") var tmdbId: Int? = null,
 )
 
 data class RidoItems(
-    @JsonProperty("slug") var slug: String? = null,
-    @JsonProperty("contentable") var contentable: RidoContentable? = null,
+    @param:JsonProperty("slug") var slug: String? = null,
+    @param:JsonProperty("contentable") var contentable: RidoContentable? = null,
 )
 
 data class RidoData(
-    @JsonProperty("url") var url: String? = null,
-    @JsonProperty("items") var items: ArrayList<RidoItems>? = arrayListOf(),
+    @param:JsonProperty("url") var url: String? = null,
+    @param:JsonProperty("items") var items: ArrayList<RidoItems>? = arrayListOf(),
 )
 
 data class RidoResponses(
-    @JsonProperty("data") var data: ArrayList<RidoData>? = arrayListOf(),
+    @param:JsonProperty("data") var data: ArrayList<RidoData>? = arrayListOf(),
 )
 
 data class RidoSearch(
-    @JsonProperty("data") var data: RidoData? = null,
+    @param:JsonProperty("data") var data: RidoData? = null,
 )
 
 data class NepuSearch(
-    @JsonProperty("data") val data: ArrayList<Data>? = arrayListOf(),
+    @param:JsonProperty("data") val data: ArrayList<Data>? = arrayListOf(),
 ) {
     data class Data(
-        @JsonProperty("url") val url: String? = null,
-        @JsonProperty("name") val name: String? = null,
-        @JsonProperty("type") val type: String? = null,
+        @param:JsonProperty("url") val url: String? = null,
+        @param:JsonProperty("name") val name: String? = null,
+        @param:JsonProperty("type") val type: String? = null,
     )
 }
 data class SubtitlesAPI(
@@ -403,7 +403,7 @@ data class SubtitlesAPI(
 data class Subtitle(
     val id: String,
     val url: String,
-    @JsonProperty("SubEncoding")
+    @param:JsonProperty("SubEncoding")
     val subEncoding: String,
     val lang: String,
     val m: String,
@@ -441,53 +441,53 @@ data class Link(
 )
 
 data class ER(
-    @JsonProperty("code") val code: Int? = null,
-    @JsonProperty("msg") val msg: String? = null,
-    @JsonProperty("server_runtime") val serverRuntime: Double? = null,
-    @JsonProperty("server_name") val serverName: String? = null,
-    @JsonProperty("data") val data: DData? = null,
+    @param:JsonProperty("code") val code: Int? = null,
+    @param:JsonProperty("msg") val msg: String? = null,
+    @param:JsonProperty("server_runtime") val serverRuntime: Double? = null,
+    @param:JsonProperty("server_name") val serverName: String? = null,
+    @param:JsonProperty("data") val data: DData? = null,
 )
 
 data class DData(
-    @JsonProperty("link") val link: String? = null,
-    @JsonProperty("file_list") val fileList: List<FileList>? = null,
+    @param:JsonProperty("link") val link: String? = null,
+    @param:JsonProperty("file_list") val fileList: List<FileList>? = null,
 )
 
 data class FileList(
-    @JsonProperty("fid") val fid: Long? = null,
-    @JsonProperty("file_name") val fileName: String? = null,
-    @JsonProperty("oss_fid") val ossFid: Long? = null,
+    @param:JsonProperty("fid") val fid: Long? = null,
+    @param:JsonProperty("file_name") val fileName: String? = null,
+    @param:JsonProperty("oss_fid") val ossFid: Long? = null,
 )
 
 data class ExternalResponse(
-    @JsonProperty("code") val code: Int? = null,
-    @JsonProperty("msg") val msg: String? = null,
-    @JsonProperty("server_runtime") val serverRuntime: Double? = null,
-    @JsonProperty("server_name") val serverName: String? = null,
-    @JsonProperty("data") val data: Data? = null,
+    @param:JsonProperty("code") val code: Int? = null,
+    @param:JsonProperty("msg") val msg: String? = null,
+    @param:JsonProperty("server_runtime") val serverRuntime: Double? = null,
+    @param:JsonProperty("server_name") val serverName: String? = null,
+    @param:JsonProperty("data") val data: Data? = null,
 ) {
     data class Data(
-        @JsonProperty("link") val link: String? = null,
-        @JsonProperty("file_list") val fileList: List<FileList>? = null,
+        @param:JsonProperty("link") val link: String? = null,
+        @param:JsonProperty("file_list") val fileList: List<FileList>? = null,
     ) {
         data class FileList(
-            @JsonProperty("fid") val fid: Long? = null,
-            @JsonProperty("file_name") val fileName: String? = null,
-            @JsonProperty("oss_fid") val ossFid: Long? = null,
+            @param:JsonProperty("fid") val fid: Long? = null,
+            @param:JsonProperty("file_name") val fileName: String? = null,
+            @param:JsonProperty("oss_fid") val ossFid: Long? = null,
         )
     }
 }
 
 data class ExternalSourcesWrapper(
-    @JsonProperty("sources") val sources: List<ExternalSources>? = null
+    @param:JsonProperty("sources") val sources: List<ExternalSources>? = null
 )
 
 data class ExternalSources(
-    @JsonProperty("source") val source: String? = null,
-    @JsonProperty("file") val file: String? = null,
-    @JsonProperty("label") val label: String? = null,
-    @JsonProperty("type") val type: String? = null,
-    @JsonProperty("size") val size: String? = null,
+    @param:JsonProperty("source") val source: String? = null,
+    @param:JsonProperty("file") val file: String? = null,
+    @param:JsonProperty("label") val label: String? = null,
+    @param:JsonProperty("type") val type: String? = null,
+    @param:JsonProperty("size") val size: String? = null,
 )
 
 data class EpisoderesponseKAA(
@@ -538,7 +538,7 @@ data class SubtitleKAA(
 
 
 data class AnimeKaiResponse(
-    @JsonProperty("result") val result: String
+    @param:JsonProperty("result") val result: String
 ) {
     fun getDocument(): Document {
         return Jsoup.parse(result)
@@ -550,53 +550,53 @@ fun extractVideoUrlFromJsonAnimekai(jsonData: String): String {
     return jsonObject.getString("url")
 }
 data class AnichiStream(
-    @JsonProperty("format") val format: String? = null,
-    @JsonProperty("audio_lang") val audio_lang: String? = null,
-    @JsonProperty("hardsub_lang") val hardsub_lang: String? = null,
-    @JsonProperty("url") val url: String? = null,
+    @param:JsonProperty("format") val format: String? = null,
+    @param:JsonProperty("audio_lang") val audio_lang: String? = null,
+    @param:JsonProperty("hardsub_lang") val hardsub_lang: String? = null,
+    @param:JsonProperty("url") val url: String? = null,
 )
 
 data class PortData(
-    @JsonProperty("streams") val streams: ArrayList<AnichiStream>? = arrayListOf(),
+    @param:JsonProperty("streams") val streams: ArrayList<AnichiStream>? = arrayListOf(),
 )
 
 data class AnichiSubtitles(
-    @JsonProperty("lang") val lang: String?,
-    @JsonProperty("label") val label: String?,
-    @JsonProperty("src") val src: String?,
+    @param:JsonProperty("lang") val lang: String?,
+    @param:JsonProperty("label") val label: String?,
+    @param:JsonProperty("src") val src: String?,
 )
 
 data class AnichiLinks(
-    @JsonProperty("link") val link: String,
-    @JsonProperty("hls") val hls: Boolean? = null,
-    @JsonProperty("resolutionStr") val resolutionStr: String,
-    @JsonProperty("src") val src: String? = null,
-    @JsonProperty("headers") val headers: Headers? = null,
-    @JsonProperty("portData") val portData: PortData? = null,
-    @JsonProperty("subtitles") val subtitles: ArrayList<AnichiSubtitles>? = arrayListOf(),
+    @param:JsonProperty("link") val link: String,
+    @param:JsonProperty("hls") val hls: Boolean? = null,
+    @param:JsonProperty("resolutionStr") val resolutionStr: String,
+    @param:JsonProperty("src") val src: String? = null,
+    @param:JsonProperty("headers") val headers: Headers? = null,
+    @param:JsonProperty("portData") val portData: PortData? = null,
+    @param:JsonProperty("subtitles") val subtitles: ArrayList<AnichiSubtitles>? = arrayListOf(),
 )
 
 data class Headers(
-    @JsonProperty("Referer") val referer: String? = null,
-    @JsonProperty("Origin") val origin: String? = null,
-    @JsonProperty("user-agent") val userAgent: String? = null,
+    @param:JsonProperty("Referer") val referer: String? = null,
+    @param:JsonProperty("Origin") val origin: String? = null,
+    @param:JsonProperty("user-agent") val userAgent: String? = null,
 )
 
 
-data class AnichiVideoApiResponse(@JsonProperty("links") val links: List<AnichiLinks>)
+data class AnichiVideoApiResponse(@param:JsonProperty("links") val links: List<AnichiLinks>)
 
 //Domains Parser
 
 data class DomainsParser(
     val moviesdrive: String,
-    @JsonProperty("HDHUB4u")
+    @param:JsonProperty("HDHUB4u")
     val hdhub4u: String,
-    @JsonProperty("4khdhub")
+    @param:JsonProperty("4khdhub")
     val n4khdhub: String,
-    @JsonProperty("MultiMovies")
+    @param:JsonProperty("MultiMovies")
     val multiMovies: String,
     val bollyflix: String,
-    @JsonProperty("UHDMovies")
+    @param:JsonProperty("UHDMovies")
     val uhdmovies: String,
     val moviesmod: String,
     val topMovies: String,
@@ -638,7 +638,7 @@ data class CinemetaRes(
         val type: String? = null,
         val name: String? = null,
 
-        @JsonProperty("imdb_id")
+        @param:JsonProperty("imdb_id")
         val imdbId: String? = null,
 
         val slug: String? = null,
@@ -656,7 +656,7 @@ data class CinemetaRes(
         val imdbRating: String? = null,
         val genres: List<String>? = null,
         val poster: String? = null,
-        @JsonProperty("_rawPosterUrl")
+        @param:JsonProperty("_rawPosterUrl")
         val rawPosterUrl: String? = null,
 
         val background: String? = null,
@@ -669,7 +669,7 @@ data class CinemetaRes(
 
         val behaviorHints: BehaviorHints? = null,
 
-        @JsonProperty("app_extras")
+        @param:JsonProperty("app_extras")
         val appExtras: AppExtras? = null,
     ) {
 
@@ -768,9 +768,9 @@ data class PrimeSrcServerList(
 data class PrimeSrcServer(
     val name: String,
     val key: String,
-    @JsonProperty("file_size")
+    @param:JsonProperty("file_size")
     val fileSize: String?,
-    @JsonProperty("file_name")
+    @param:JsonProperty("file_name")
     val fileName: String?,
 )
 
@@ -858,19 +858,19 @@ class SearchData : ArrayList<SearchData.SearchDataItem>() {
 data class EmbedmasterSourceItem(
     val id: Any? = null,
     val type: String? = null,
-    @JsonProperty("source_type")
+    @param:JsonProperty("source_type")
     val sourceType: Long? = null,
-    @JsonProperty("source_quality")
+    @param:JsonProperty("source_quality")
     val sourceQuality: String? = null,
-    @JsonProperty("source_name")
+    @param:JsonProperty("source_name")
     val sourceName: String? = null,
-    @JsonProperty("source_title")
+    @param:JsonProperty("source_title")
     val sourceTitle: String? = null,
-    @JsonProperty("source_subtitle")
+    @param:JsonProperty("source_subtitle")
     val sourceSubtitle: Boolean? = null,
-    @JsonProperty("source_icon")
+    @param:JsonProperty("source_icon")
     val sourceIcon: Long? = null,
-    @JsonProperty("source_url")
+    @param:JsonProperty("source_url")
     val sourceUrl: String,
 )
 
@@ -883,9 +883,9 @@ data class Server(
 )
 
 data class BidSrcHeaders(
-    @JsonProperty("Referer")
+    @param:JsonProperty("Referer")
     val referer: String,
-    @JsonProperty("Origin")
+    @param:JsonProperty("Origin")
     val origin: String,
 )
 
@@ -899,7 +899,7 @@ data class FlixindiaResult(
     val id: Long,
     val title: String,
     val url: String,
-    @JsonProperty("created_at")
+    @param:JsonProperty("created_at")
     val createdAt: String,
 )
 
@@ -932,16 +932,16 @@ data class Dooflix(
 
 data class DooflixLink(
     val id: Long,
-    @JsonProperty("movie_id")
+    @param:JsonProperty("movie_id")
     val movieId: Long,
     val host: String,
     val url: String,
     val quality: String,
     val size: String,
     val order: Long,
-    @JsonProperty("created_at")
+    @param:JsonProperty("created_at")
     val createdAt: String,
-    @JsonProperty("updated_at")
+    @param:JsonProperty("updated_at")
     val updatedAt: String,
 )
 
@@ -1028,11 +1028,11 @@ data class Hit(
 
 data class Vaplayer(
     val data: VaplayerData,
-    @JsonProperty("default_subs")
+    @param:JsonProperty("default_subs")
     val defaultSubs: List<Any?>,
 )
 
 data class VaplayerData(
-    @JsonProperty("stream_urls")
+    @param:JsonProperty("stream_urls")
     val streamUrls: List<String>,
 )

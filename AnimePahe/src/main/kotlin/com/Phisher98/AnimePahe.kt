@@ -43,19 +43,19 @@ class AnimePahe : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         data class Data(
-//            @JsonProperty("id") val id: Int,
-//            @JsonProperty("anime_id") val animeId: Int,
-            @JsonProperty("anime_title") val animeTitle: String,
-//            @JsonProperty("anime_slug") val animeSlug: String,
-            @JsonProperty("episode") val episode: Int?,
-            @JsonProperty("snapshot") val snapshot: String?,
-            @JsonProperty("created_at") val createdAt: String?,
-            @JsonProperty("anime_session") val animeSession: String,
+//            @param:JsonProperty("id") val id: Int,
+//            @param:JsonProperty("anime_id") val animeId: Int,
+            @param:JsonProperty("anime_title") val animeTitle: String,
+//            @param:JsonProperty("anime_slug") val animeSlug: String,
+            @param:JsonProperty("episode") val episode: Int?,
+            @param:JsonProperty("snapshot") val snapshot: String?,
+            @param:JsonProperty("created_at") val createdAt: String?,
+            @param:JsonProperty("anime_session") val animeSession: String,
         )
 
         data class AnimePaheLatestReleases(
-            @JsonProperty("total") val total: Int,
-            @JsonProperty("data") val data: List<Data>
+            @param:JsonProperty("total") val total: Int,
+            @param:JsonProperty("data") val data: List<Data>
         )
         val response = app.get(request.data + page, headers = headers).text
         val episodes = parseJson<AnimePaheLatestReleases>(response).data.map {
@@ -79,23 +79,23 @@ class AnimePahe : MainAPI() {
     }
 
     data class AnimePaheSearchData(
-        @JsonProperty("id") val id: Int?,
-        @JsonProperty("slug") val slug: String?,
-        @JsonProperty("title") val title: String,
-        @JsonProperty("type") val type: String?,
-        @JsonProperty("episodes") val episodes: Int?,
-        @JsonProperty("status") val status: String?,
-        @JsonProperty("season") val season: String?,
-        @JsonProperty("year") val year: Int?,
-        @JsonProperty("score") val score: Double?,
-        @JsonProperty("poster") val poster: String?,
-        @JsonProperty("session") val session: String,
-        @JsonProperty("relevance") val relevance: String?
+        @param:JsonProperty("id") val id: Int?,
+        @param:JsonProperty("slug") val slug: String?,
+        @param:JsonProperty("title") val title: String,
+        @param:JsonProperty("type") val type: String?,
+        @param:JsonProperty("episodes") val episodes: Int?,
+        @param:JsonProperty("status") val status: String?,
+        @param:JsonProperty("season") val season: String?,
+        @param:JsonProperty("year") val year: Int?,
+        @param:JsonProperty("score") val score: Double?,
+        @param:JsonProperty("poster") val poster: String?,
+        @param:JsonProperty("session") val session: String,
+        @param:JsonProperty("relevance") val relevance: String?
     )
 
     data class AnimePaheSearch(
-        @JsonProperty("total") val total: Int,
-        @JsonProperty("data") val data: List<AnimePaheSearchData>
+        @param:JsonProperty("total") val total: Int,
+        @param:JsonProperty("data") val data: List<AnimePaheSearchData>
     )
 
 
@@ -119,35 +119,35 @@ class AnimePahe : MainAPI() {
     }
 
     private data class AnimeData(
-        @JsonProperty("id") val id: Int,
-        @JsonProperty("anime_id") val animeId: Int,
-        @JsonProperty("episode") val episode: Int,
-        @JsonProperty("title") val title: String,
-        @JsonProperty("snapshot") val snapshot: String,
-        @JsonProperty("session") val session: String,
-        @JsonProperty("filler") val filler: Int,
-        @JsonProperty("created_at") val createdAt: String
+        @param:JsonProperty("id") val id: Int,
+        @param:JsonProperty("anime_id") val animeId: Int,
+        @param:JsonProperty("episode") val episode: Int,
+        @param:JsonProperty("title") val title: String,
+        @param:JsonProperty("snapshot") val snapshot: String,
+        @param:JsonProperty("session") val session: String,
+        @param:JsonProperty("filler") val filler: Int,
+        @param:JsonProperty("created_at") val createdAt: String
     )
 
     private data class AnimePaheAnimeData(
-        @JsonProperty("total") val total: Int,
-        @JsonProperty("per_page") val perPage: Int,
-        @JsonProperty("current_page") val currentPage: Int,
-        @JsonProperty("last_page") val lastPage: Int,
-        @JsonProperty("next_page_url") val nextPageUrl: String?,
-        @JsonProperty("prev_page_url") val prevPageUrl: String?,
-        @JsonProperty("from") val from: Int,
-        @JsonProperty("to") val to: Int,
-        @JsonProperty("data") val data: List<AnimeData>
+        @param:JsonProperty("total") val total: Int,
+        @param:JsonProperty("per_page") val perPage: Int,
+        @param:JsonProperty("current_page") val currentPage: Int,
+        @param:JsonProperty("last_page") val lastPage: Int,
+        @param:JsonProperty("next_page_url") val nextPageUrl: String?,
+        @param:JsonProperty("prev_page_url") val prevPageUrl: String?,
+        @param:JsonProperty("from") val from: Int,
+        @param:JsonProperty("to") val to: Int,
+        @param:JsonProperty("data") val data: List<AnimeData>
     )
 
     data class LinkLoadData(
-        @JsonProperty("mainUrl") val mainUrl: String,
-        @JsonProperty("is_play_page") val is_play_page: Boolean,
-        @JsonProperty("episode_num") val episode_num: Int,
-        @JsonProperty("page") val page: Int,
-        @JsonProperty("session") val session: String,
-        @JsonProperty("episode_session") val episode_session: String,
+        @param:JsonProperty("mainUrl") val mainUrl: String,
+        @param:JsonProperty("is_play_page") val is_play_page: Boolean,
+        @param:JsonProperty("episode_num") val episode_num: Int,
+        @param:JsonProperty("page") val page: Int,
+        @param:JsonProperty("session") val session: String,
+        @param:JsonProperty("episode_session") val episode_session: String,
     ) {
         private val headers = mapOf("Cookie" to "__ddg2_=1234567890")
         suspend fun getUrl(): String? {

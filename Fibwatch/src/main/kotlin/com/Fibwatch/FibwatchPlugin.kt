@@ -32,11 +32,11 @@ class FibwatchPlugin: BasePlugin() {
         }
 
         data class Domains(
-            @JsonProperty("fibwatch")
+            @param:JsonProperty("fibwatch")
             val fibwatch: String,
-            @JsonProperty("fibtoon")
+            @param:JsonProperty("fibtoon")
             val fibtoon: String,
-            @JsonProperty("fibdrama")
+            @param:JsonProperty("fibdrama")
             val fibdrama: String,
         )
     }

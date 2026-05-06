@@ -259,8 +259,8 @@ class Watch32 : MainAPI() {
     }
 
     data class Source(
-            @JsonProperty("type") var type: String,
-            @JsonProperty("link") var link: String
+            @param:JsonProperty("type") var type: String,
+            @param:JsonProperty("link") var link: String
     )
 
     private fun searchResponseBuilder(webDocument: Document): List<SearchResponse> {

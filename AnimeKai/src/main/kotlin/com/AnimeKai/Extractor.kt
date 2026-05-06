@@ -120,8 +120,8 @@ open class MegaUp : ExtractorApi() {
       }
 
     data class AnimeKaiResponse(
-        @JsonProperty("status") val status: Int,
-        @JsonProperty("result") val result: String
+        @param:JsonProperty("status") val status: Int,
+        @param:JsonProperty("result") val result: String
     )
 
 }

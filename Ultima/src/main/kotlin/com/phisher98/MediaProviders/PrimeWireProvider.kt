@@ -105,7 +105,7 @@ class PrimeWireProvider : MediaProvider() {
     
     data class Root(
         val link: String,
-        @JsonProperty("host_id")
+        @param:JsonProperty("host_id")
         val hostId: Long,
         val host: String,
     )

@@ -173,19 +173,19 @@ open class MyAnimeList(val plugin: UltimaPlugin) : MainAPI() {
     }
 
     data class MalApiResponse(
-            @JsonProperty("data") val data: Array<MalApiData>? = null,
+            @param:JsonProperty("data") val data: Array<MalApiData>? = null,
     ) {
         data class MalApiData(
-                @JsonProperty("node") val node: MalApiNode,
+                @param:JsonProperty("node") val node: MalApiNode,
         ) {
             data class MalApiNode(
-                    @JsonProperty("id") val id: Int,
-                    @JsonProperty("title") val title: String,
-                    @JsonProperty("main_picture") val picture: MalApiNodePicture
+                    @param:JsonProperty("id") val id: Int,
+                    @param:JsonProperty("title") val title: String,
+                    @param:JsonProperty("main_picture") val picture: MalApiNodePicture
             ) {
                 data class MalApiNodePicture(
-                        @JsonProperty("medium") val medium: String,
-                        @JsonProperty("large") val large: String,
+                        @param:JsonProperty("medium") val medium: String,
+                        @param:JsonProperty("large") val large: String,
                 )
             }
         }

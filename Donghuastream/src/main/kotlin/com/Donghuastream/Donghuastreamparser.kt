@@ -4,14 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Root(
     val status: String,
-    @JsonProperty("server_time")
+    @param:JsonProperty("server_time")
     val serverTime: String,
     val query: Query,
-    @JsonProperty("embed_link")
+    @param:JsonProperty("embed_link")
     val embedLink: String,
-    @JsonProperty("download_link")
+    @param:JsonProperty("download_link")
     val downloadLink: String,
-    @JsonProperty("request_link")
+    @param:JsonProperty("request_link")
     val requestLink: String,
     val title: String,
     val poster: String,

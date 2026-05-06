@@ -17,23 +17,23 @@ data class LoadURL(
 
 
 data class Home(
-    @JsonProperty("current_page")
+    @param:JsonProperty("current_page")
     val currentPage: Long? = null,
     val data: List<HomeDaum> = emptyList(),
-    @JsonProperty("first_page_url")
+    @param:JsonProperty("first_page_url")
     val firstPageUrl: String? = null,
     val from: Long? = null,
-    @JsonProperty("last_page")
+    @param:JsonProperty("last_page")
     val lastPage: Long? = null,
-    @JsonProperty("last_page_url")
+    @param:JsonProperty("last_page_url")
     val lastPageUrl: String? = null,
     val links: List<HomeLink> = emptyList(),
-    @JsonProperty("next_page_url")
+    @param:JsonProperty("next_page_url")
     val nextPageUrl: String? = null,
     val path: String? = null,
-    @JsonProperty("per_page")
+    @param:JsonProperty("per_page")
     val perPage: Long? = null,
-    @JsonProperty("prev_page_url")
+    @param:JsonProperty("prev_page_url")
     val prevPageUrl: String? = null,
     val to: Long? = null,
     val total: Long? = null
@@ -42,28 +42,28 @@ data class Home(
 data class HomeDaum(
     val id: Long? = null,
     val name: String? = null,
-    @JsonProperty("poster_path")
+    @param:JsonProperty("poster_path")
     val posterPath: String? = null,
-    @JsonProperty("backdrop_path")
+    @param:JsonProperty("backdrop_path")
     val backdropPath: String? = null,
-    @JsonProperty("backdrop_path_tv")
+    @param:JsonProperty("backdrop_path_tv")
     val backdropPathTv: String? = null,
-    @JsonProperty("vote_average")
+    @param:JsonProperty("vote_average")
     val voteAverage: Double? = null,
     val subtitle: String? = null,
     val overview: String? = null,
-    @JsonProperty("release_date")
+    @param:JsonProperty("release_date")
     val releaseDate: String? = null,
     val pinned: Long? = null,
-    @JsonProperty("created_at")
+    @param:JsonProperty("created_at")
     val createdAt: String? = null,
     val views: Long? = null,
     val type: String? = null,
-    @JsonProperty("genre_name")
+    @param:JsonProperty("genre_name")
     val genreName: String? = null,
-    @JsonProperty("recent_views")
+    @param:JsonProperty("recent_views")
     val recentViews: Long? = null,
-    @JsonProperty("content_type")
+    @param:JsonProperty("content_type")
     val contentType: String? = null
 )
 
@@ -83,44 +83,44 @@ data class Search(
     val id: Long,
     val name: String,
 
-    @JsonProperty("original_name")
+    @param:JsonProperty("original_name")
     val originalName: String?,
 
-    @JsonProperty("poster_path")
+    @param:JsonProperty("poster_path")
     val posterPath: String?,
 
-    @JsonProperty("backdrop_path")
+    @param:JsonProperty("backdrop_path")
     val backdropPath: String?,
 
-    @JsonProperty("backdrop_path_tv")
+    @param:JsonProperty("backdrop_path_tv")
     val backdropPathTv: String?,
 
-    @JsonProperty("vote_average")
+    @param:JsonProperty("vote_average")
     val voteAverage: Double?,
 
     val subtitle: Any?,
 
     val overview: String?,
 
-    @JsonProperty("release_date")
+    @param:JsonProperty("release_date")
     val releaseDate: String?,
 
     val pinned: Int?,
 
-    @JsonProperty("created_at")
+    @param:JsonProperty("created_at")
     val createdAt: String?,
 
-    @JsonProperty("updated_at")
+    @param:JsonProperty("updated_at")
     val updatedAt: String?,
 
     val views: Long?,
 
     val type: String,
 
-    @JsonProperty("genre_name")
+    @param:JsonProperty("genre_name")
     val genreName: String?,
 
-    @JsonProperty("match_score")
+    @param:JsonProperty("match_score")
     val matchScore: Double?
 )
 

@@ -71,9 +71,9 @@ class MultiMoviesProvider : MediaProvider() {
     // #region - Data classes
 
     data class ResponseHash(
-            @JsonProperty("embed_url") val embed_url: String,
-            @JsonProperty("key") val key: String? = null,
-            @JsonProperty("type") val type: String? = null,
+            @param:JsonProperty("embed_url") val embed_url: String,
+            @param:JsonProperty("key") val key: String? = null,
+            @param:JsonProperty("type") val type: String? = null,
     )
     // #endregion - Data classes
 }

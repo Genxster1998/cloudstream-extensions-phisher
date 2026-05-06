@@ -46,15 +46,15 @@ data class ResponseData(
 
 
 data class ExternalSourcesWrapper(
-    @JsonProperty("sources") val sources: List<ExternalSources>? = null
+    @param:JsonProperty("sources") val sources: List<ExternalSources>? = null
 )
 
 data class ExternalSources(
-    @JsonProperty("source") val source: String? = null,
-    @JsonProperty("file") val file: String? = null,
-    @JsonProperty("label") val label: String? = null,
-    @JsonProperty("type") val type: String? = null,
-    @JsonProperty("size") val size: String? = null,
+    @param:JsonProperty("source") val source: String? = null,
+    @param:JsonProperty("file") val file: String? = null,
+    @param:JsonProperty("label") val label: String? = null,
+    @param:JsonProperty("type") val type: String? = null,
+    @param:JsonProperty("size") val size: String? = null,
 )
 
 suspend fun fetchTmdbLogoUrl(

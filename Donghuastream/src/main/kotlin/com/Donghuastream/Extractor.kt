@@ -221,9 +221,9 @@ open class PlayStreamplay : ExtractorApi() {
         val query: Query,
         val status: String,
         val message: String,
-        @JsonProperty("embed_url")
+        @param:JsonProperty("embed_url")
         val embedUrl: String,
-        @JsonProperty("download_url")
+        @param:JsonProperty("download_url")
         val downloadUrl: String,
         val title: String,
         val poster: String,

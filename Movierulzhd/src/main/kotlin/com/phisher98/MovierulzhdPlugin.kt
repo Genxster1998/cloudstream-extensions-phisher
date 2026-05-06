@@ -43,9 +43,9 @@ class MovierulzhdPlugin: BasePlugin() {
         }
 
         data class Domains(
-            @JsonProperty("movierulzhd")
+            @param:JsonProperty("movierulzhd")
             val movierulzhd: String,
-            @JsonProperty("hdmovie2")
+            @param:JsonProperty("hdmovie2")
             val hdmovie2: String,
         )
     }

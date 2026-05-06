@@ -22,53 +22,53 @@ data class Link(
 )
 
 data class ER(
-    @JsonProperty("code") val code: Int? = null,
-    @JsonProperty("msg") val msg: String? = null,
-    @JsonProperty("server_runtime") val serverRuntime: Double? = null,
-    @JsonProperty("server_name") val serverName: String? = null,
-    @JsonProperty("data") val data: DData? = null,
+    @param:JsonProperty("code") val code: Int? = null,
+    @param:JsonProperty("msg") val msg: String? = null,
+    @param:JsonProperty("server_runtime") val serverRuntime: Double? = null,
+    @param:JsonProperty("server_name") val serverName: String? = null,
+    @param:JsonProperty("data") val data: DData? = null,
 )
 
 data class DData(
-    @JsonProperty("link") val link: String? = null,
-    @JsonProperty("file_list") val fileList: List<FileList>? = null,
+    @param:JsonProperty("link") val link: String? = null,
+    @param:JsonProperty("file_list") val fileList: List<FileList>? = null,
 )
 
 data class FileList(
-    @JsonProperty("fid") val fid: Long? = null,
-    @JsonProperty("file_name") val fileName: String? = null,
-    @JsonProperty("oss_fid") val ossFid: Long? = null,
+    @param:JsonProperty("fid") val fid: Long? = null,
+    @param:JsonProperty("file_name") val fileName: String? = null,
+    @param:JsonProperty("oss_fid") val ossFid: Long? = null,
 )
 
 data class ExternalResponse(
-    @JsonProperty("code") val code: Int? = null,
-    @JsonProperty("msg") val msg: String? = null,
-    @JsonProperty("server_runtime") val serverRuntime: Double? = null,
-    @JsonProperty("server_name") val serverName: String? = null,
-    @JsonProperty("data") val data: Data? = null,
+    @param:JsonProperty("code") val code: Int? = null,
+    @param:JsonProperty("msg") val msg: String? = null,
+    @param:JsonProperty("server_runtime") val serverRuntime: Double? = null,
+    @param:JsonProperty("server_name") val serverName: String? = null,
+    @param:JsonProperty("data") val data: Data? = null,
 ) {
     data class Data(
-        @JsonProperty("link") val link: String? = null,
-        @JsonProperty("file_list") val fileList: List<FileList>? = null,
+        @param:JsonProperty("link") val link: String? = null,
+        @param:JsonProperty("file_list") val fileList: List<FileList>? = null,
     ) {
         data class FileList(
-            @JsonProperty("fid") val fid: Long? = null,
-            @JsonProperty("file_name") val fileName: String? = null,
-            @JsonProperty("oss_fid") val ossFid: Long? = null,
+            @param:JsonProperty("fid") val fid: Long? = null,
+            @param:JsonProperty("file_name") val fileName: String? = null,
+            @param:JsonProperty("oss_fid") val ossFid: Long? = null,
         )
     }
 }
 
 data class ExternalSourcesWrapper(
-    @JsonProperty("sources") val sources: List<ExternalSources>? = null
+    @param:JsonProperty("sources") val sources: List<ExternalSources>? = null
 )
 
 data class ExternalSources(
-    @JsonProperty("source") val source: String? = null,
-    @JsonProperty("file") val file: String? = null,
-    @JsonProperty("label") val label: String? = null,
-    @JsonProperty("type") val type: String? = null,
-    @JsonProperty("size") val size: String? = null,
+    @param:JsonProperty("source") val source: String? = null,
+    @param:JsonProperty("file") val file: String? = null,
+    @param:JsonProperty("label") val label: String? = null,
+    @param:JsonProperty("type") val type: String? = null,
+    @param:JsonProperty("size") val size: String? = null,
 )
 
 
@@ -80,7 +80,7 @@ data class SubtitlesAPI(
 data class Subtitle(
     val id: String,
     val url: String,
-    @JsonProperty("SubEncoding")
+    @param:JsonProperty("SubEncoding")
     val subEncoding: String,
     val lang: String,
     val m: String,
@@ -187,11 +187,11 @@ data class FileData(
 data class HTML(
     val code: Long,
     val html: String,
-    @JsonProperty("path_html")
+    @param:JsonProperty("path_html")
     val pathHtml: String,
-    @JsonProperty("path_html2")
+    @param:JsonProperty("path_html2")
     val pathHtml2: String,
-    @JsonProperty("file_name")
+    @param:JsonProperty("file_name")
     val fileName: String,
     val starttime: Double,
     val starttime2: Double,

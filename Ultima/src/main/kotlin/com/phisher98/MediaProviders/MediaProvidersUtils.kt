@@ -70,15 +70,15 @@ abstract class MediaProvider {
     }
 
     data class Keys(
-            @JsonProperty("chillx") val chillx: List<String>,
-            @JsonProperty("aniwave") val aniwave: List<Step>,
-            @JsonProperty("cinezone") val cinezone: List<Step>,
-            @JsonProperty("vidplay") val vidplay: List<String>
+            @param:JsonProperty("chillx") val chillx: List<String>,
+            @param:JsonProperty("aniwave") val aniwave: List<Step>,
+            @param:JsonProperty("cinezone") val cinezone: List<Step>,
+            @param:JsonProperty("vidplay") val vidplay: List<String>
     ) {
         data class Step(
-                @JsonProperty("sequence") val sequence: Int,
-                @JsonProperty("method") val method: String,
-                @JsonProperty("keys") val keys: List<String>? = null
+                @param:JsonProperty("sequence") val sequence: Int,
+                @param:JsonProperty("method") val method: String,
+                @param:JsonProperty("keys") val keys: List<String>? = null
         )
     }
 }
@@ -860,18 +860,18 @@ class ZoroExtractor(provider: String?, dubType: String?, domain: String = "") : 
     override val requiresReferer = false
 
     data class ZoroJson(
-            @JsonProperty("tracks") val subtitles: List<Subtitle>,
-            @JsonProperty("sources") val sources: List<Source>
+            @param:JsonProperty("tracks") val subtitles: List<Subtitle>,
+            @param:JsonProperty("sources") val sources: List<Source>
     ) {
         data class Subtitle(
-                @JsonProperty("file") val file: String,
-                @JsonProperty("label") val lang: String? = null,
-                @JsonProperty("kind") val kind: String,
+                @param:JsonProperty("file") val file: String,
+                @param:JsonProperty("label") val lang: String? = null,
+                @param:JsonProperty("kind") val kind: String,
         )
 
         data class Source(
-                @JsonProperty("file") val file: String,
-                @JsonProperty("type") val type: String
+                @param:JsonProperty("file") val file: String,
+                @param:JsonProperty("type") val type: String
         )
     }
 

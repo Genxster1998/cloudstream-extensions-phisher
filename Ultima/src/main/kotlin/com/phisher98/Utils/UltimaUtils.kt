@@ -10,16 +10,16 @@ import kotlinx.coroutines.sync.withPermit
 
 object UltimaUtils {
     data class SectionInfo(
-            @JsonProperty("name") var name: String,
-            @JsonProperty("url") var url: String,
-            @JsonProperty("pluginName") var pluginName: String,
-            @JsonProperty("enabled") var enabled: Boolean = false,
-            @JsonProperty("priority") var priority: Int = 0
+            @param:JsonProperty("name") var name: String,
+            @param:JsonProperty("url") var url: String,
+            @param:JsonProperty("pluginName") var pluginName: String,
+            @param:JsonProperty("enabled") var enabled: Boolean = false,
+            @param:JsonProperty("priority") var priority: Int = 0
     )
 
     data class ExtensionInfo(
-            @JsonProperty("name") var name: String? = null,
-            @JsonProperty("sections") var sections: Array<SectionInfo>? = null
+            @param:JsonProperty("name") var name: String? = null,
+            @param:JsonProperty("sections") var sections: Array<SectionInfo>? = null
     )
 
     enum class Category {
@@ -29,9 +29,9 @@ object UltimaUtils {
     }
 
     data class MediaProviderState(
-            @JsonProperty("name") var name: String,
-            @JsonProperty("enabled") var enabled: Boolean = true,
-            @JsonProperty("customDomain") var customDomain: String? = null
+            @param:JsonProperty("name") var name: String,
+            @param:JsonProperty("enabled") var enabled: Boolean = true,
+            @param:JsonProperty("customDomain") var customDomain: String? = null
     ) {
         fun getProvider(): MediaProvider {
             return UltimaMediaProvidersUtils.mediaProviders.find { it.name.equals(name) }
@@ -44,30 +44,30 @@ object UltimaUtils {
     }
 
     data class LinkData(
-        @JsonProperty("simklId") val simklId: Int? = null,
-        @JsonProperty("traktId") val traktId: Int? = null,
-        @JsonProperty("imdbId") val imdbId: String? = null,
-        @JsonProperty("tmdbId") val tmdbId: Int? = null,
-        @JsonProperty("tvdbId") val tvdbId: Int? = null,
-        @JsonProperty("type") val type: String? = null,
-        @JsonProperty("season") val season: Int? = null,
-        @JsonProperty("episode") val episode: Int? = null,
-        @JsonProperty("aniId") val aniId: Int? = null,
-        @JsonProperty("malId") val malId: Int? = null,
-        @JsonProperty("title") val title: String? = null,
-        @JsonProperty("year") val year: Int? = null,
-        @JsonProperty("orgTitle") val orgTitle: String? = null,
-        @JsonProperty("isAnime") val isAnime: Boolean = false,
-        @JsonProperty("airedYear") val airedYear: Int? = null,
-        @JsonProperty("lastSeason") val lastSeason: Int? = null,
-        @JsonProperty("epsTitle") val epsTitle: String? = null,
-        @JsonProperty("jpTitle") val jpTitle: String? = null,
-        @JsonProperty("date") val date: String? = null,
-        @JsonProperty("airedDate") val airedDate: String? = null,
-        @JsonProperty("isAsian") val isAsian: Boolean = false,
-        @JsonProperty("isBollywood") val isBollywood: Boolean = false,
-        @JsonProperty("isCartoon") val isCartoon: Boolean = false,
-        @JsonProperty("isDub") val isDub: Boolean = false,
+        @param:JsonProperty("simklId") val simklId: Int? = null,
+        @param:JsonProperty("traktId") val traktId: Int? = null,
+        @param:JsonProperty("imdbId") val imdbId: String? = null,
+        @param:JsonProperty("tmdbId") val tmdbId: Int? = null,
+        @param:JsonProperty("tvdbId") val tvdbId: Int? = null,
+        @param:JsonProperty("type") val type: String? = null,
+        @param:JsonProperty("season") val season: Int? = null,
+        @param:JsonProperty("episode") val episode: Int? = null,
+        @param:JsonProperty("aniId") val aniId: Int? = null,
+        @param:JsonProperty("malId") val malId: Int? = null,
+        @param:JsonProperty("title") val title: String? = null,
+        @param:JsonProperty("year") val year: Int? = null,
+        @param:JsonProperty("orgTitle") val orgTitle: String? = null,
+        @param:JsonProperty("isAnime") val isAnime: Boolean = false,
+        @param:JsonProperty("airedYear") val airedYear: Int? = null,
+        @param:JsonProperty("lastSeason") val lastSeason: Int? = null,
+        @param:JsonProperty("epsTitle") val epsTitle: String? = null,
+        @param:JsonProperty("jpTitle") val jpTitle: String? = null,
+        @param:JsonProperty("date") val date: String? = null,
+        @param:JsonProperty("airedDate") val airedDate: String? = null,
+        @param:JsonProperty("isAsian") val isAsian: Boolean = false,
+        @param:JsonProperty("isBollywood") val isBollywood: Boolean = false,
+        @param:JsonProperty("isCartoon") val isCartoon: Boolean = false,
+        @param:JsonProperty("isDub") val isDub: Boolean = false,
     )
 }
 
@@ -84,14 +84,14 @@ suspend fun <T> retry(
 
 data class DomainsParser(
     val moviesdrive: String,
-    @JsonProperty("HDHUB4u")
+    @param:JsonProperty("HDHUB4u")
     val hdhub4u: String,
-    @JsonProperty("4khdhub")
+    @param:JsonProperty("4khdhub")
     val n4khdhub: String,
-    @JsonProperty("MultiMovies")
+    @param:JsonProperty("MultiMovies")
     val multiMovies: String,
     val bollyflix: String,
-    @JsonProperty("UHDMovies")
+    @param:JsonProperty("UHDMovies")
     val uhdmovies: String,
     val moviesmod: String,
     val topMovies: String,

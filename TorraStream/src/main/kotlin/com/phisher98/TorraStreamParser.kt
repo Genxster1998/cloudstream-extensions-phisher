@@ -47,7 +47,7 @@ data class SubtitlesAPI(
 data class Subtitle1(
     val id: String,
     val url: String,
-    @JsonProperty("SubEncoding")
+    @param:JsonProperty("SubEncoding")
     val subEncoding: String,
     val lang: String,
     val m: String,
@@ -331,7 +331,7 @@ data class CinemetaRes(
         val type: String? = null,
         val name: String? = null,
 
-        @JsonProperty("imdb_id")
+        @param:JsonProperty("imdb_id")
         val imdbId: String? = null,
 
         val slug: String? = null,
@@ -349,7 +349,7 @@ data class CinemetaRes(
         val imdbRating: String? = null,
         val genres: List<String>? = null,
         val poster: String? = null,
-        @JsonProperty("_rawPosterUrl")
+        @param:JsonProperty("_rawPosterUrl")
         val rawPosterUrl: String? = null,
 
         val background: String? = null,
@@ -362,7 +362,7 @@ data class CinemetaRes(
 
         val behaviorHints: BehaviorHints? = null,
 
-        @JsonProperty("app_extras")
+        @param:JsonProperty("app_extras")
         val appExtras: AppExtras? = null,
     ) {
 

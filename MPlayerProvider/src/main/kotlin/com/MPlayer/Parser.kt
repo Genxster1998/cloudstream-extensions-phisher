@@ -51,7 +51,7 @@ data class Item(
     val subType: String,
     val gifVideoUrl: Any?,
     val gifVideoUrlInfo: Any?,
-    @JsonProperty("canPreviewGIFVideo")
+    @param:JsonProperty("canPreviewGIFVideo")
     val canPreviewGifvideo: Boolean,
     val webUrl: String,
     val isOptimizedDescription: Boolean,
@@ -65,7 +65,7 @@ data class Item(
     val tags: Any?,
     val tabs: Any?,
     val goldBadgeImageInfo: Any?,
-    @JsonProperty("existInCW")
+    @param:JsonProperty("existInCW")
     val existInCw: Boolean,
 )
 
@@ -73,7 +73,7 @@ data class LanguagesDetail(
     val id: String,
     val name: String,
     val webUrl: String?,
-    @JsonProperty("three_char_language_id")
+    @param:JsonProperty("three_char_language_id")
     val threeCharLanguageId: String,
 )
 
@@ -84,23 +84,23 @@ data class GenresDetail(
 )
 
 data class Image(
-    @JsonProperty("16x9")
+    @param:JsonProperty("16x9")
     val n16x9: String,
-    @JsonProperty("2x3")
+    @param:JsonProperty("2x3")
     val n2x3: String,
-    @JsonProperty("1x1")
+    @param:JsonProperty("1x1")
     val n1x1: String?,
-    @JsonProperty("18x14")
+    @param:JsonProperty("18x14")
     val n18x14: Any?,
-    @JsonProperty("40x13")
+    @param:JsonProperty("40x13")
     val n40x13: Any?,
-    @JsonProperty("9x16")
+    @param:JsonProperty("9x16")
     val n9x16: Any?,
-    @JsonProperty("13x15")
+    @param:JsonProperty("13x15")
     val n13x15: Any?,
-    @JsonProperty("2x1")
+    @param:JsonProperty("2x1")
     val n2x1: String?,
-    @JsonProperty("9x19")
+    @param:JsonProperty("9x19")
     val n9x19: String?,
 )
 
@@ -110,7 +110,7 @@ data class ImageInfo(
     val type: String,
     val url: String,
     val height: Long,
-    @JsonProperty("genre_ids")
+    @param:JsonProperty("genre_ids")
     val genreIds: List<String>?,
 )
 
@@ -157,7 +157,7 @@ data class Trailer(
     val contributors: List<Any?>,
     val sequence: Long,
     val subType: String,
-    @JsonProperty("canPreviewGIFVideo")
+    @param:JsonProperty("canPreviewGIFVideo")
     val canPreviewGifvideo: Boolean,
     val webUrl: String,
     val isOptimizedDescription: Boolean,
@@ -170,7 +170,7 @@ data class Trailer(
     val overlayImages: Any?,
     val tabs: Any?,
     val goldBadgeImageInfo: Any?,
-    @JsonProperty("existInCW")
+    @param:JsonProperty("existInCW")
     val existInCw: Boolean,
 )
 
@@ -248,7 +248,7 @@ data class LanguagesDetail2(
     val id: String,
     val name: String,
     val webUrl: String,
-    @JsonProperty("three_char_language_id")
+    @param:JsonProperty("three_char_language_id")
     val threeCharLanguageId: String,
 )
 
@@ -258,23 +258,23 @@ data class GenresDetail2(
 )
 
 data class Image2(
-    @JsonProperty("16x9")
+    @param:JsonProperty("16x9")
     val n16x9: String,
-    @JsonProperty("2x3")
+    @param:JsonProperty("2x3")
     val n2x3: Any?,
-    @JsonProperty("1x1")
+    @param:JsonProperty("1x1")
     val n1x1: Any?,
-    @JsonProperty("18x14")
+    @param:JsonProperty("18x14")
     val n18x14: Any?,
-    @JsonProperty("40x13")
+    @param:JsonProperty("40x13")
     val n40x13: Any?,
-    @JsonProperty("9x16")
+    @param:JsonProperty("9x16")
     val n9x16: String?,
-    @JsonProperty("13x15")
+    @param:JsonProperty("13x15")
     val n13x15: Any?,
-    @JsonProperty("2x1")
+    @param:JsonProperty("2x1")
     val n2x1: Any?,
-    @JsonProperty("9x19")
+    @param:JsonProperty("9x19")
     val n9x19: Any?,
 )
 
@@ -346,7 +346,7 @@ data class EpisodesItem(
     val container: Container,
     val sequence: Long,
     val subType: String,
-    @JsonProperty("canPreviewGIFVideo")
+    @param:JsonProperty("canPreviewGIFVideo")
     val canPreviewGifvideo: Boolean,
     val webUrl: String?,
     val isOptimizedDescription: Boolean,
@@ -359,7 +359,7 @@ data class EpisodesItem(
     val overlayImages: Any?,
     val tabs: Any?,
     val goldBadgeImageInfo: Any?,
-    @JsonProperty("existInCW")
+    @param:JsonProperty("existInCW")
     val existInCw: Boolean,
 )
 
@@ -426,28 +426,28 @@ data class EpisodesLanguagesDetail(
     val id: String,
     val name: String,
     val webUrl: String,
-    @JsonProperty("three_char_language_id")
+    @param:JsonProperty("three_char_language_id")
     val threeCharLanguageId: String,
 )
 
 data class EpisodesImage(
-    @JsonProperty("16x9")
+    @param:JsonProperty("16x9")
     val n16x9: String,
-    @JsonProperty("2x3")
+    @param:JsonProperty("2x3")
     val n2x3: Any?,
-    @JsonProperty("1x1")
+    @param:JsonProperty("1x1")
     val n1x1: Any?,
-    @JsonProperty("18x14")
+    @param:JsonProperty("18x14")
     val n18x14: String,
-    @JsonProperty("40x13")
+    @param:JsonProperty("40x13")
     val n40x13: Any?,
-    @JsonProperty("9x16")
+    @param:JsonProperty("9x16")
     val n9x16: Any?,
-    @JsonProperty("13x15")
+    @param:JsonProperty("13x15")
     val n13x15: Any?,
-    @JsonProperty("2x1")
+    @param:JsonProperty("2x1")
     val n2x1: String,
-    @JsonProperty("9x19")
+    @param:JsonProperty("9x19")
     val n9x19: Any?,
 )
 
@@ -517,7 +517,7 @@ data class MovieItem(
     val container: Any?,
     val sequence: Long,
     val subType: String,
-    @JsonProperty("canPreviewGIFVideo")
+    @param:JsonProperty("canPreviewGIFVideo")
     val canPreviewGifvideo: Boolean,
     val webUrl: String,
     val isOptimizedDescription: Boolean,
@@ -531,7 +531,7 @@ data class MovieItem(
     val overlayImages: Any?,
     val tabs: Any?,
     val goldBadgeImageInfo: Any?,
-    @JsonProperty("existInCW")
+    @param:JsonProperty("existInCW")
     val existInCw: Boolean,
 )
 
@@ -609,7 +609,7 @@ data class MovieLanguagesDetail(
     val id: String,
     val name: String,
     val webUrl: String,
-    @JsonProperty("three_char_language_id")
+    @param:JsonProperty("three_char_language_id")
     val threeCharLanguageId: String,
 )
 
@@ -620,23 +620,23 @@ data class MovieGenresDetail(
 )
 
 data class MovieImage(
-    @JsonProperty("16x9")
+    @param:JsonProperty("16x9")
     val n16x9: String,
-    @JsonProperty("2x3")
+    @param:JsonProperty("2x3")
     val n2x3: String,
-    @JsonProperty("1x1")
+    @param:JsonProperty("1x1")
     val n1x1: Any?,
-    @JsonProperty("18x14")
+    @param:JsonProperty("18x14")
     val n18x14: Any?,
-    @JsonProperty("40x13")
+    @param:JsonProperty("40x13")
     val n40x13: Any?,
-    @JsonProperty("9x16")
+    @param:JsonProperty("9x16")
     val n9x16: Any?,
-    @JsonProperty("13x15")
+    @param:JsonProperty("13x15")
     val n13x15: Any?,
-    @JsonProperty("2x1")
+    @param:JsonProperty("2x1")
     val n2x1: Any?,
-    @JsonProperty("9x19")
+    @param:JsonProperty("9x19")
     val n9x19: Any?,
 )
 
@@ -693,7 +693,7 @@ data class MovieTrailer(
     val subType: String,
     val gifVideoUrl: MovieGifVideoUrl,
     val gifVideoUrlInfo: List<MovieGifVideoUrlInfo>,
-    @JsonProperty("canPreviewGIFVideo")
+    @param:JsonProperty("canPreviewGIFVideo")
     val canPreviewGifvideo: Boolean,
     val webUrl: String,
     val isOptimizedDescription: Boolean,
@@ -708,7 +708,7 @@ data class MovieTrailer(
     val tags: List<MovieTag>,
     val tabs: Any?,
     val goldBadgeImageInfo: Any?,
-    @JsonProperty("existInCW")
+    @param:JsonProperty("existInCW")
     val existInCw: Boolean,
 )
 
@@ -775,7 +775,7 @@ data class MovieLanguagesDetail2(
     val id: String,
     val name: String,
     val webUrl: String,
-    @JsonProperty("three_char_language_id")
+    @param:JsonProperty("three_char_language_id")
     val threeCharLanguageId: String,
 )
 
@@ -785,11 +785,11 @@ data class MovieGenresDetail2(
 )
 
 data class MovieImage2(
-    @JsonProperty("16x9")
+    @param:JsonProperty("16x9")
     val n16x9: String,
-    @JsonProperty("2x3")
+    @param:JsonProperty("2x3")
     val n2x3: String,
-    @JsonProperty("1x1")
+    @param:JsonProperty("1x1")
     val n1x1: Any?,
 )
 

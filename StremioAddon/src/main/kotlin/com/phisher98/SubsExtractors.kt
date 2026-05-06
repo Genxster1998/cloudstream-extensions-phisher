@@ -75,35 +75,35 @@ object SubsExtractors {
     }
 
     data class OsSubtitles(
-        @JsonProperty("url") val url: String? = null,
-        @JsonProperty("lang") val lang: String? = null,
+        @param:JsonProperty("url") val url: String? = null,
+        @param:JsonProperty("lang") val lang: String? = null,
     )
 
     data class OsResult(
-        @JsonProperty("subtitles") val subtitles: ArrayList<OsSubtitles>? = arrayListOf(),
+        @param:JsonProperty("subtitles") val subtitles: ArrayList<OsSubtitles>? = arrayListOf(),
     )
 
     data class WatchsomuchTorrents(
-        @JsonProperty("id") val id: Int? = null,
-        @JsonProperty("movieId") val movieId: Int? = null,
-        @JsonProperty("season") val season: Int? = null,
-        @JsonProperty("episode") val episode: Int? = null,
+        @param:JsonProperty("id") val id: Int? = null,
+        @param:JsonProperty("movieId") val movieId: Int? = null,
+        @param:JsonProperty("season") val season: Int? = null,
+        @param:JsonProperty("episode") val episode: Int? = null,
     )
 
     data class WatchsomuchMovies(
-        @JsonProperty("torrents") val torrents: ArrayList<WatchsomuchTorrents>? = arrayListOf(),
+        @param:JsonProperty("torrents") val torrents: ArrayList<WatchsomuchTorrents>? = arrayListOf(),
     )
 
     data class WatchsomuchResponses(
-        @JsonProperty("movie") val movie: WatchsomuchMovies? = null,
+        @param:JsonProperty("movie") val movie: WatchsomuchMovies? = null,
     )
 
     data class WatchsomuchSubtitles(
-        @JsonProperty("url") val url: String? = null,
-        @JsonProperty("label") val label: String? = null,
+        @param:JsonProperty("url") val url: String? = null,
+        @param:JsonProperty("label") val label: String? = null,
     )
 
     data class WatchsomuchSubResponses(
-        @JsonProperty("subtitles") val subtitles: ArrayList<WatchsomuchSubtitles>? = arrayListOf(),
+        @param:JsonProperty("subtitles") val subtitles: ArrayList<WatchsomuchSubtitles>? = arrayListOf(),
     )
 }

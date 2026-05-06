@@ -31,7 +31,7 @@ class HindmoviezPlugin : BasePlugin() {
         }
 
         data class Domains(
-            @JsonProperty("hindmoviez")
+            @param:JsonProperty("hindmoviez")
             val hindmoviez: String,
         )
     }
