@@ -22,7 +22,7 @@ cloudstream {
     // You can find a list of available types here:
     // https://recloudstream.github.io/cloudstream/html/app/com.lagradost.cloudstream3/-tv-type/index.html
     tvTypes = listOf("AnimeMovie","Anime","Cartoon")
-    iconUrl="https://toonhub4u.me/wp-content/uploads/2024/02/Untitled.png"
+    iconUrl="https://toonhub4u.co/wp-content/uploads/2024/02/Untitled.png"
 
     isCrossPlatform = true
 }
