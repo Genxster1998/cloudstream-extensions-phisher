@@ -11,5 +11,6 @@ class AnichiPlugin : BasePlugin() {
         registerExtractorAPI(StreamWishExtractor())
         registerExtractorAPI(FilemoonV2())
         registerExtractorAPI(Allanimeups())
+        registerExtractorAPI(Bysekoze())
     }
 }

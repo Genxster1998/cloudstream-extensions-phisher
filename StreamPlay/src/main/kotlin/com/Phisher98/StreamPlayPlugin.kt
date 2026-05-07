@@ -205,6 +205,8 @@ class StreamPlayPlugin: Plugin() {
         registerExtractorAPI(Shikshakdaak())
         registerExtractorAPI(Gdshine())
         registerExtractorAPI(FlixCloud())
+        registerExtractorAPI(Bysekoze())
+        registerExtractorAPI(ByseSX())
 
         openSettings = { ctx ->
             val act = ctx as AppCompatActivity
