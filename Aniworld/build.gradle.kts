@@ -16,7 +16,7 @@ cloudstream {
     language = "de"
     // All of these properties are optional, you can safely remove them
 
-    description = "Include: Serienstream"
+    description = "Include: Serienstream (Login Required under Extension Settings)"
     authors = listOf("Phisher98,Hexated")
 
     /**

@@ -5,13 +5,14 @@ import com.lagradost.cloudstream3.HomePageList
 import com.lagradost.cloudstream3.HomePageResponse
 import com.lagradost.cloudstream3.LoadResponse
 import com.lagradost.cloudstream3.MainPageRequest
+import com.lagradost.cloudstream3.SearchResponse
 import com.lagradost.cloudstream3.TvType
 import com.lagradost.cloudstream3.app
 import com.lagradost.cloudstream3.mainPageOf
 import com.lagradost.cloudstream3.newHomePageResponse
 
 class Serienstream(sharedPref: SharedPreferences?=null) : Aniworld() {
-    override var mainUrl = "https://serienstream.to"
+    override var mainUrl = "https://s.to"
     override var name = "Serienstream"
     override val supportedTypes = setOf(
         TvType.Movie,
@@ -47,6 +48,19 @@ class Serienstream(sharedPref: SharedPreferences?=null) : Aniworld() {
         "genre/kinderserie" to "Kinderserie",
         "genre/history" to "Historie"
     )
+
+
+    override suspend fun search(query: String): List<SearchResponse> {
+        val resp = app.get(
+            "$mainUrl/suche",
+            params = mapOf("term" to query, "tab" to "shows"),
+            referer = "$mainUrl/suche",
+        ).document
+
+        return resp.select(".results-group .card").mapNotNull {
+            it.toSearchResult()
+        }
+    }
 
 
     override suspend fun getMainPage(

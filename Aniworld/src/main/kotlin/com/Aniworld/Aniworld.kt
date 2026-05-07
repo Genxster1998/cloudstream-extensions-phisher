@@ -80,7 +80,7 @@ open class Aniworld(sharedPref: SharedPreferences?=null) : MainAPI() {
 
         if (isTvSeries) {
             return app
-                .get("https://serienstream.to/api/search/suggest?term=$query")
+                .get("https://serienstream.to/suche?term=$query")
                 .parsedSafe<SerienstreamSearch>()
                 ?.shows
                 ?.map {
